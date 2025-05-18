@@ -19,7 +19,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
+      setIsScrolled(scrollPosition > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -54,34 +54,66 @@ const Header = () => {
 
   return (
     <>
-      <header className={cn(
-        'fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 py-7 md:py-11',
-        isScrolled ? 'bg-hotel-darkest-green bg-opacity-90 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-      )}>
-        <div className="max-w-site mx-auto flex items-center justify-between px-4 md:px-10">
-          {/* Logo */}
-          <div className="relative z-10">
-            <Link to="/" className="text-hotel-off-white tracking-wide max-w-[182px] md:w-full block">
-              <LogoIcon />
-            </Link>
+      <header className="relative">
+        <div className="absolute top-0 left-0 right-0 z-40 text-hotel-off-white  font-montserrat  border-b border-hotel-off-white border-opacity-20 hidden lg:block">
+          <div className="flex text-sm flex gap-6 max-w-content mx-auto flex justify-between items-center py-4  ">
+            <div>
+              <p>МО, г. Щелково, улица Талсинская ул., дом 9/2</p>
+            </div>
+            <div>
+              <p>hotelpremium2016@yandex.ru</p>
+            </div>
+            <div className="font-bold ml-auto">
+              <p>+7 (929) 996-16-69</p>
+            </div>
+            <div className="font-bold">
+              <p>+7 (926) 871-16-69</p>
+            </div>
           </div>
+        </div>
+        <div className={cn(
+          'fixed lg:top-14 top-0 left-0 right-0 z-40 w-full transition-all duration-150 py-2.5 lg:py-4',
+          isScrolled ? 'lg:top-0 bg-black/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        )}>
+          <div className="max-w-content mx-auto flex lg:justify-between items-center px-4 lg:px-0">
 
-          {/* Desktop Menu */}
-          {!isMobile && !isTablet && (
-            <nav className="hidden lg:flex space-x-6 text-hotel-off-white">
-              <Link to="/about" className="hover:opacity-80 transition-opacity text-sm uppercase tracking-wider font-medium">О нас</Link>
-              <Link to="/rooms" className="hover:opacity-80 transition-opacity text-sm uppercase tracking-wider font-medium">Номера</Link>
-              <Link to="/promotions" className="hover:opacity-80 transition-opacity text-sm uppercase tracking-wider font-medium">Акции</Link>
-              <Link to="/services" className="hover:opacity-80 transition-opacity text-sm uppercase tracking-wider font-medium">Услуги</Link>
-              <Link to="/contacts" className="hover:opacity-80 transition-opacity text-sm uppercase tracking-wider font-medium">Контакты</Link>
-              <Link to="/faq" className="hover:opacity-80 transition-opacity text-sm uppercase tracking-wider font-medium">FAQ</Link>
-            </nav>
-          )}
+            {/* Menu Button - Mobile & Tablet only */}
+            {(isMobile || isTablet) && (
+              <div className="flex items-center">
+                <CustomButton
+                  variant="menu"
+                  size="icon"
+                  className="mr-4"
+                  aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  {mobileMenuOpen ? <X className="w-5 h-5" /> : <MenuIcon />}
+                </CustomButton>
+              </div>
+            )}
 
-          {/* Desktop & Tablet Actions */}
-          <div className="flex items-center space-x-4 md:space-x-6">
-            {/* Booking Button - Desktop & Tablet only */}
+            {/* Logo */}
+            <div className="relative z-10 lg:mr-auto">
+              <Link to="/" className="text-hotel-off-white tracking-wide max-w-[90px] max-h-[30px] lg:max-w-[168px] lg:max-h-[56px] block">
+                <LogoIcon />
+              </Link>
+            </div>
+
+            {/* Desktop Menu */}
             {!isMobile && !isTablet && (
+              <nav className="hidden lg:flex space-x-6 text-hotel-off-white font-montserrat">
+                <Link to="/booking" className="hover:opacity-80 transition-opacity text-sm uppercase">Номера</Link>
+                <Link to="/barbecue" className="hover:opacity-80 transition-opacity text-sm uppercase">Аренда беседок</Link>
+                <Link to="/sauna" className="hover:opacity-80 transition-opacity text-sm uppercase">Сауна и хаммам</Link>
+                <Link to="/promotions" className="hover:opacity-80 transition-opacity text-sm uppercase">Акции</Link>
+                <Link to="/services" className="hover:opacity-80 transition-opacity text-sm uppercase">Услуги</Link>
+                <Link to="/restaurant" className="hover:opacity-80 transition-opacity text-sm uppercase">Ресторан и караоке</Link>
+                <Link to="/contacts" className="hover:opacity-80 transition-opacity text-sm uppercase">Контакты</Link>
+              </nav>
+            )}
+
+            {/* Desktop & Tablet Actions */}
+            <div className="flex items-center space-x-4 md:space-x-6 ml-auto">
               <CustomButton
                 variant="small"
                 size="sm"
@@ -90,56 +122,7 @@ const Header = () => {
               >
                 Забронировать
               </CustomButton>
-            )}
-
-            {/* WhatsApp Button */}
-            <CustomButton
-              variant="smallIcon"
-              size="icon"
-              className="rounded-full"
-              aria-label="WhatsApp"
-              onClick={() => window.open('https://wa.clck.bar/79963652330?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BB%D0%B8%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BD%D0%B0%20', '_blank')}
-            >
-              <WhatsAppIcon />
-            </CustomButton>
-
-            {/* Telegram Button */}
-            <CustomButton
-              variant="smallIcon"
-              size="icon"
-              className="rounded-full"
-              aria-label="Telegram"
-              onClick={() => window.open('https://t.me/hotelelectrostal', '_blank')}
-            >
-              <TelegramIcon />
-            </CustomButton>
-
-            {/* Phone - Desktop & Tablet only */}
-            {!isMobile && (
-              <div className="flex gap-4">
-                <a href="tel:+7 496 574 42 72" className="text-hotel-off-white flex items-center text-sm font-medium">
-                  <span className="hidden md:inline">+7 496 574 42 72</span>
-                </a>
-                <a href="tel:+7 996 365 23 30" className="text-hotel-off-white flex items-center text-sm font-medium">
-                  <span className="hidden md:inline">+7 996 365 23 30</span>
-                </a>
-              </div>
-            )}
-
-            {/* Menu Button - Mobile & Tablet only */}
-            {(isMobile || isTablet) && (
-              <div className="flex items-center">
-                <CustomButton
-                  variant="menu"
-                  size="icon"
-                  className="ml-4"
-                  aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                  {mobileMenuOpen ? <X className="w-5 h-5" /> : <MenuIcon />}
-                </CustomButton>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </header>
@@ -147,12 +130,12 @@ const Header = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (isMobile || isTablet) && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-30 bg-hotel-darkest-green bg-opacity-95 backdrop-blur-sm pt-24 px-4 pb-6 max-h-[100vh] overflow-y-auto"
+            className="fixed inset-0 z-30 bg-hotel-darkest-blue bg-opacity-95 backdrop-blur-sm pt-24 px-4 pb-6 max-h-[100vh] overflow-y-auto"
           >
             <nav className="flex flex-col space-y-3 text-hotel-off-white">
               <motion.div
@@ -205,7 +188,7 @@ const Header = () => {
               </motion.div>
 
               {/* Mobile phone & booking button */}
-              <motion.div 
+              <motion.div
                 variants={contactInfoVariants}
                 initial="hidden"
                 animate="visible"

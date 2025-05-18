@@ -101,23 +101,23 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
         <div className="absolute bottom-4 left-4 flex flex-row gap-2">
           {/* Area info */}
           <div className="flex items-center bg-black bg-opacity-50 text-white px-6 py-3 rounded-full">
-            <img src="/images/rooms/area-icon-1.svg" className="w-5 h-5 mr-2" alt="Area" />
+            <img src="/assets/images/rooms/area-icon-1.svg" className="w-5 h-5 mr-2" alt="Area" />
             <span className="text-sm">{room.area} м²</span>
           </div>
           
           {/* Bed info */}
           <div className="flex items-center justify-center bg-black bg-opacity-50 text-white p-3 rounded-full w-10 h-10">
-            <img src="/images/rooms/bed-icon.svg" className="w-5 h-5" alt="Bed" />
+            <img src="/assets/images/rooms/bed-icon.svg" className="w-5 h-5" alt="Bed" />
           </div>
           
           {/* WiFi info */}
           <div className="flex items-center justify-center bg-black bg-opacity-50 text-white p-3 rounded-full w-10 h-10">
-            <img src="/images/rooms/wifi-icon.svg" className="w-5 h-5" alt="WiFi" />
+            <img src="/assets/images/rooms/wifi-icon.svg" className="w-5 h-5" alt="WiFi" />
           </div>
           
           {/* Bath info */}
           <div className="flex items-center justify-center bg-black bg-opacity-50 text-white p-3 rounded-full w-10 h-10">
-            <img src="/images/rooms/bath-icon.svg" className="w-5 h-5" alt="Bath" />
+            <img src="/assets/images/rooms/bath-icon.svg" className="w-5 h-5" alt="Bath" />
           </div>
         </div>
       </div>

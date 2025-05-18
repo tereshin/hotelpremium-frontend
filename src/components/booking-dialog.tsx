@@ -22,7 +22,7 @@ const BookingDialog: React.FC<BookingDialogProps> = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[450px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-medium uppercase text-hotel-darkest-green">
+          <DialogTitle className="text-2xl font-medium uppercase text-hotel-darkest-blue">
             {roomTitle ? `Забронировать ${roomTitle}` : 'Забронировать номер'}
           </DialogTitle>
         </DialogHeader>

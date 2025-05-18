@@ -4,21 +4,36 @@ import ServiceCard from '../ui/ServiceCard';
 
 const ServicesList: React.FC = () => {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-10 flex-wrap md:gap-[60px]">
+    <section className="py-4 lg:pb-24">
+      <div className="max-w-content w-full mx-auto px-4 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-[25px]">
           {services.map((service, index) => (
-            <div key={service.id} className="flex flex-col w-full md:w-[calc(50%-30px)] gap-10 md:gap-[60px]">
-                <ServiceCard
-                    title={service.title}
-                    description={service.description}
-                    image={service.image || `https://source.unsplash.com/random/800x600?hotel,service&${index}`}
-                    link={service.link}
-                />
-                {(index < services.length - 1 && index < services.length - 2) && (
-                    <div className="w-full h-[1px] border-t border-[#021A13] opacity-20 mb-2 md:mb-14" />
-                )}
+            <a
+            key={service.id}
+            href={service.link}
+            className="flex-shrink-0"
+          >
+            <div className="flex flex-col gap-8">
+              <div
+                className="relative w-full h-[175px] lg:h-[274px] rounded-sm overflow-hidden"
+                style={{
+                  backgroundImage: `
+                    url(${service.image})
+                  `,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-[#F3EEE7] uppercase text-2xl lg:text-[30px] font-light tracking-[0.06em] leading-[1.15em]">
+                      {service.title}
+                    </h3>
+                  </div>
+                </div>
+              </div>
             </div>
+          </a>
           ))}
         </div>
       </div>
