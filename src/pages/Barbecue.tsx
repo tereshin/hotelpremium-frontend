@@ -11,16 +11,16 @@ const Barbecue = () => {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden max-w-[2048px] mx-auto">
       <FirstSection title="Аренда беседок" />
-      <section className="max-w-content relative w-full lg:text-lg mx-auto px-4 lg:px-0 mb-10">
+      <section className="max-w-content relative w-full lg:text-lg mx-auto px-4 xl:px-0 mb-8">
         <div className="max-w-[747px]">
           Отличное место для отдыха на природе – беседки для барбекю в гостиничном комплексе PREMIUM Щелково. Две беседки, расположенные в непосредственной близости к реке и недалеко от лесной зоны станут прекрасным местом для того, чтобы устроить классную гриль-вечеринку.
         </div>
       </section>
-      <section className="max-w-content relative w-full lg:mx-auto my-8 lg:my-12 px-4 lg:px-0">
+      <section className="max-w-content relative w-full lg:mx-auto -mb-6 mt-8 lg:my-12 px-4 xl:px-0">
         <div className="flex w-full flex-col lg:flex-row-reverse items-center gap-0 lg:gap-10 lg:h-[625px]">
           {/* Left image column */}
           <div className={cn("w-full lg:w-[70%] lg:absolute top-0 bottom-0 z-0 left-0")}>
-            <div className="w-full bg-cover bg-center rounded-sm" style={{ backgroundImage: `url(/assets/images/home/1.jpg)` }}>
+            <div className="w-full bg-cover bg-center rounded-sm" style={{ backgroundImage: `url(/assets/images/barbecue/1.jpg)` }}>
               <div className="pt-[70%]"></div>
             </div>
           </div>
@@ -42,10 +42,10 @@ const Barbecue = () => {
       </section>
 
       {/* Facts Section */}
-      <section className="py-8 lg:py-10 px-4 lg:px-10 max-w-[2048px] mx-auto ">
+      <section className="py-4 lg:py-10 px-4 lg:px-10 max-w-[2048px] mx-auto ">
         <div className="max-w-content mx-auto flex flex-col gap-8 lg:gap-14">
           <Title>Мы все продумали, беседки<br /> оборудованы всем необходимым:</Title>
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-10">
             <FeatureIcon
               icon="/assets/icons/icon-size.svg"
               text="Размер беседки 55 кв.м."
@@ -74,18 +74,18 @@ const Barbecue = () => {
         </div>
       </section>
 
-      <section className="max-w-content relative w-full lg:mx-auto my-8 lg:my-12 px-4 lg:px-0">
+      <section className="max-w-content relative w-full lg:mx-auto -mb-6 mt-8 lg:my-12 px-4 xl:px-0">
         <div className="flex w-full flex-col lg:flex-row items-center gap-0 lg:gap-10 lg:h-[625px]">
           {/* Left image column */}
           <div className={cn("w-full lg:w-[70%] lg:absolute top-0 bottom-0 z-0 right-0")}>
-            <div className="w-full bg-cover bg-center rounded-sm" style={{ backgroundImage: `url(/assets/images/home/1.jpg)` }}>
+            <div className="w-full bg-cover bg-center rounded-sm" style={{ backgroundImage: `url(/assets/images/barbecue/2.jpg)` }}>
               <div className="pt-[70%]"></div>
             </div>
           </div>
 
           {/* Right content column */}
-          <div className={cn("w-full lg:w-[57%] flex flex-col gap-6 lg:gap-10 shadow-xl -top-10 lg:-top-6 bg-white rounded-md px-6 py-8 lg:px-10 lg:py-16 z-10 relative")}>
-            <div className="flex flex-col gap-10 ">
+          <div className={cn("w-full lg:w-[57%] flex flex-col gap-4 lg:gap-10 shadow-xl -top-10 lg:-top-6 bg-white rounded-md px-6 py-8 lg:px-10 lg:py-16 z-10 relative")}>
+            <div className="flex flex-col gap-5 lg:gap-10 ">
               <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
                 <div>
                   <h2 className="text-3xl lg:text-4xl text-hotel-dark-blue uppercase tracking-wide font-light leading-tight mb-1" >с 11:00 до 22:00</h2>
@@ -98,7 +98,7 @@ const Barbecue = () => {
 
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col lg:gap-2">
                 <h2 className="text-3xl lg:text-4xl text-hotel-dark-blue uppercase tracking-wide font-light leading-tight mb-2" >
                   Стоимость
                 </h2>
@@ -121,7 +121,7 @@ const Barbecue = () => {
 
       {/* Services Section */}
       <section className="py-10 lg:py-20 px-4 lg:px-10 max-w-[2048px] mx-auto">
-        <div className="max-w-content w-full mx-auto flex flex-col gap-8 lg:gap-12">
+        <div className="max-w-content w-full mx-auto flex flex-col gap-6 lg:gap-12">
           <Title>Другие предложения</Title>
           <ServicesSlider />
         </div>

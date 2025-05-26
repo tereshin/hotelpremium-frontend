@@ -14,9 +14,11 @@ interface TextImageSectionProps {
   list?: string[];
   expiry?: string;
   reverse?: boolean;
+  isPromo?: boolean;
+  isSpecial?: boolean;
 }
 
-const TextImageSection: React.FC<TextImageSectionProps> = ({ title, text, image, button, list, expiry, reverse = false }) => {
+const TextImageSection: React.FC<TextImageSectionProps> = ({ title, text, image, button, list, expiry, reverse = false, isPromo = false, isSpecial = false }) => {
   return (
     <section className="max-w-content relative w-full lg:mx-auto">
       <div className={cn("flex w-full flex-col lg:flex-row items-center gap-0 lg:gap-10 lg:h-[625px]", reverse ? "lg:flex-row-reverse" : "")}>
@@ -28,9 +30,19 @@ const TextImageSection: React.FC<TextImageSectionProps> = ({ title, text, image,
         </div>
 
         {/* Right content column */}
-        <div className={cn("w-full lg:w-[57%] flex flex-col gap-6 lg:gap-10 shadow-xl -top-10 lg:-top-6 bg-white rounded-md px-6 py-8 lg:px-10 lg:py-16 z-10 relative", reverse ? "mr-auto" : "ml-auto ")}>
+        <div className={cn("w-full lg:w-[57%] overflow-hidden flex flex-col gap-6 lg:gap-10 shadow-xl -top-10 lg:-top-6 bg-white rounded-md px-6 py-8 lg:px-10 lg:py-16 z-10 relative", reverse ? "mr-auto" : "ml-auto ")}>
+          {isPromo && (
+            <div className="font-montserrat uppercase w-[217.854px] rotate-[30deg] py-1 lg:py-2 px-3 rounded bg-[#FD3155] text-white text-center font-semibold text-xs leading-tight tracking-wider uppercase absolute -right-[70px] top-3 lg:-right-[40px] lg:top-6">
+              Акция
+            </div>
+          )}
+          {isSpecial && (
+            <div className="font-montserrat uppercase w-[300.854px] rotate-[30deg] py-1 lg:py-2 px-3 rounded bg-[#AF31FD] text-white text-center font-semibold text-xs leading-tight tracking-wider uppercase absolute top-8 -right-[74px] lg:-right-[60px] lg:top-10">
+              Спец. предложение
+            </div>
+          )}
           <div className="flex flex-col gap-4 ">
-            <h2 className="text-3xl lg:text-4xl text-[#093024] uppercase tracking-wide font-light leading-tight" dangerouslySetInnerHTML={{ __html: title }} />
+            <h2 className="text-4xl text-[#093024] uppercase tracking-wide font-light lg:leading-tight max-w-[250px] lg:max-w-full" dangerouslySetInnerHTML={{ __html: title }} />
 
             <div className="flex flex-col gap-5">
               <p className="text-lg text-[#021A13] max-w-[600px]">
@@ -38,14 +50,14 @@ const TextImageSection: React.FC<TextImageSectionProps> = ({ title, text, image,
               </p>
             </div>
             {list && (
-            <div className="flex flex-col gap-2">
-              {list.map((item, index) => (
-                <p key={index} className="flex lg:items-center gap-2"><CheckIcon className="relative top-1 lg:top-0" />{item}</p>
-              ))}
-            </div>
-          )}
+              <div className="flex flex-col gap-2">
+                {list.map((item, index) => (
+                  <p key={index} className="flex lg:items-center gap-2"><CheckIcon className="relative top-1 lg:top-0" />{item}</p>
+                ))}
+              </div>
+            )}
           </div>
-          
+
           <div className="flex flex-col lg:flex-row items-center gap-5 lg:gap-7">
             <CustomButton
               variant="base2"

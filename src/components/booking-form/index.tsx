@@ -66,7 +66,7 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
     const formattedCheckOutDate = format(checkOutDate, 'dd-MM-yyyy');
 
     // Construct the URL with all required parameters
-    const baseUrl = 'https://reservationsteps.ru/rooms/index/4bdeba76-9f0b-4007-8f64-7fcd6aff2f1a';
+    const baseUrl = 'https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884';
     const params = new URLSearchParams({
       lang: 'ru',
       scroll_to_rooms: '1',
@@ -245,7 +245,7 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
         </div>
 
         {/* Submit Button */}
-        <div className="flex items-end">
+        <div className="flex items-end w-full lg:w-auto">
           <CustomButton variant="base2" size="lg" type="submit" className="w-full" disabled={!isFormValid}>
             Забронировать
           </CustomButton>

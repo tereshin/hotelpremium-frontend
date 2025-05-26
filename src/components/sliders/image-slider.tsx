@@ -84,7 +84,7 @@ const ImageSlider = ({
         <div
           key={index}
           className={cn(
-            "absolute inset-0 transition-all duration-500 ease-in-out",
+            "absolute inset-0 transition-all duration-500 ease-in-out h-[calc(100%-40px)] lg:h-[calc(100%-50px)]",
             index === currentSlide
               ? "opacity-100 transform scale-100"
               : "opacity-0 transform scale-105"
@@ -93,12 +93,25 @@ const ImageSlider = ({
           <img
             src={image}
             alt={`Image ${index + 1}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-sm"
             loading={index === 0 ? "eager" : "lazy"}
           />
         </div>
       ))}
-      <div className="absolute w-full hidden lg:block bottom-0 top-0 my-auto h-fit right-0 z-10">
+      {/* Pagination Bullets */}
+      <div className="absolute -bottom-0 left-0 right-0 z-10 flex justify-center">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={cn(
+              "w-4 h-4 border border-gray-400 rounded-full mx-1 relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-1.5 after:h-1.5 after:right-0 after:bottom-0 after:m-auto after:bg-white after:rounded-full",
+              index === currentSlide ? "bg-hotel-dark-blue border-transparent" : ""
+            )}
+            onClick={() => setCurrentSlide(index)}
+          />
+        ))}
+      </div>
+      <div className="absolute w-full hidden lg:block bottom-0 -top-4 my-auto h-fit right-0 z-10">
         <SliderNavigation
           onPrev={handlePrev}
           onNext={handleNext}

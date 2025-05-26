@@ -12,6 +12,8 @@ interface PromotionSlide {
   image: string;
   link: string;
   reverse?: boolean;
+  isPromo?: boolean;
+  isSpecial?: boolean;
 }
 
 interface PromotionsSliderProps {
@@ -81,7 +83,7 @@ const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, classNa
   return (
     <div className={cn("relative flex flex-col md:gap-12", className)}>
       <div
-        className="flex transition-transform duration-500 ease-in-out -mb-10 lg:mb-0"
+        className="flex transition-transform duration-500 ease-in-out -mb-5 lg:mb-0"
         style={{ transform: `translateX(-${current * slideWidth}%)` }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -107,6 +109,8 @@ const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, classNa
                 link: promo.link
               }}
               reverse={promo.reverse}
+              isPromo={promo.isPromo}
+              isSpecial={promo.isSpecial}
             />
           </div>
         ))}

@@ -42,7 +42,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ title = 'Заголовок
           />
           <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         </div>
-        <div className="relative h-full w-full max-w-content hidden lg:flex flex-col lg:flex-row mx-auto justify-center lg:justify-between items-center px-4 lg:px-0 lg:max-h-[100%] pt-12 lg:pt-24">
+        <div className="relative h-full w-full max-w-content hidden lg:flex flex-col lg:flex-row mx-auto justify-center lg:justify-between items-center px-4 xl:px-0 lg:max-h-[100%] pt-12 lg:pt-24">
           <div className="z-10 max-w-[1460px] p-5 lg:p-6 text-black bg-white rounded-sm w-full">
             <BookingForm variant="horizontal" color="white" />
           </div>
@@ -50,7 +50,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ title = 'Заголовок
       </div>
 
     </div>
-      <div className="max-w-content mx-auto flex flex-col gap-4 lg:gap-6 pt-8 lg:pt-12 px-4 lg:px-0">
+      <div className="max-w-content mx-auto flex flex-col gap-4 lg:gap-6 pt-8 lg:pt-12 px-4 xl:px-0">
         <div className="uppercase text-sm font-montserrat font-medium text-[#8B9197]">
           <div className="flex items-center gap-4">
             <div className="item">
@@ -58,7 +58,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ title = 'Заголовок
             </div>
             <span>/</span>
             <div className="item">
-              <span>{title}</span>
+              <span>{title.replace(/<[^>]+>/g, '')}</span>
             </div>
           </div>
         </div>

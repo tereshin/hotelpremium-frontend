@@ -6,9 +6,9 @@ const PromotionsList: React.FC = () => {
   return (
     <section className="py-2 px-5">
       <div className="max-w-content mx-auto ">
-        <div className="flex flex-col gap-10 md:gap-[60px]">
+        <div className="flex flex-col gap-5 lg:gap-10md:gap-[60px]">
           {promotions.map((promotion, index) => (
-            <div key={promotion.id} className="flex flex-col gap-10 md:gap-[60px]">
+            <div key={promotion.id} className="flex flex-col gap-5 lg:gap-10md:gap-[60px]">
               <TextImageSection
                 title={promotion.title}
                 text={promotion.description}
@@ -20,6 +20,8 @@ const PromotionsList: React.FC = () => {
                   link: promotion.link
                 }}
                 reverse={index % 2 !== 0}
+                isPromo={promotion.isPromo}
+                isSpecial={promotion.isSpecial}
               />
             </div>
           ))}

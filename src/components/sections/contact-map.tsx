@@ -3,8 +3,8 @@ import { CustomButton } from '../ui/custom-button';
 
 const ContactMap: React.FC = () => {
   return (
-    <section className="w-full my-2">
-      <div className="max-w-content w-full mx-auto relative px-4 lg:px-0">
+    <section className="w-full">
+      <div className="max-w-content w-full mx-auto relative px-4 xl:px-0">
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 lg:gap-[30px] mb-[60px]">
           {/* Phone Contact Block */}
           <div className="w-full lg:w-1/2 bg-white rounded-md shadow-[0px_4px_34px_0px_rgba(0,0,0,0.1)] p-4 lg:p-[28px_30px]">
@@ -54,13 +54,19 @@ const ContactMap: React.FC = () => {
             <img
               src="/images/map-image.png"
               alt="Hotel Premium Map Location"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hidden lg:block"
+              loading="lazy"
+            />
+            <img
+              src="/images/map-image-mob.jpg"
+              alt="Hotel Premium Map Location"
+              className="w-full h-full object-cover block lg:hidden"
               loading="lazy"
             />
           </div>
 
           {/* Location Information Card */}
-          <div className="max-w-content mx-auto w-full pt-12 px-4 lg:px-0">
+          <div className="max-w-content mx-auto w-full pt-7 xl:pt-12 px-4 xl:px-0">
             <div className="w-full md:w-1/3 bg-white h-fit relative z-10 rounded-md shadow-[0px_4px_34px_0px_rgba(0,0,0,0.1)] p-6">
               <div className="flex flex-col gap-5">
                 {/* Icon */}

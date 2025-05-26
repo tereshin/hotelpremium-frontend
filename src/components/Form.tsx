@@ -15,6 +15,9 @@ export const Form: React.FC<FormProps> = ({ className, color = 'default' }) => {
   const [agreeRules, setAgreeRules] = useState(false);
   const [agreePrivacy, setAgreePrivacy] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogText, setDialogText] = useState('');
 
   React.useEffect(() => {
     setIsFormValid(
@@ -25,11 +28,36 @@ export const Form: React.FC<FormProps> = ({ className, color = 'default' }) => {
     );
   }, [name, phone, agreeRules, agreePrivacy]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isFormValid) return;
-    // Здесь можно добавить обработку отправки формы
-    alert(`Заявка отправлена!\nИмя: ${name}\nТелефон: ${phone}`);
+    if (!isFormValid || isSubmitting) return;
+    setIsSubmitting(true);
+    setDialogText('');
+    setDialogOpen(false);
+    try {
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('phone', phone);
+      const response = await fetch('/submit.php', {
+        method: 'POST',
+        body: formData,
+      });
+      const text = await response.text();
+      if (response.ok && text.trim() === 'ok') {
+        setDialogText('Ваша заявка успешно отправлена!');
+        setName('');
+        setPhone('');
+        setAgreeRules(false);
+        setAgreePrivacy(false);
+      } else {
+        setDialogText('Произошла ошибка при отправке. Попробуйте еще раз.');
+      }
+    } catch (error) {
+      setDialogText('Ошибка сети. Попробуйте еще раз.');
+    } finally {
+      setIsSubmitting(false);
+      setDialogOpen(true);
+    }
   };
 
   return (
@@ -37,7 +65,7 @@ export const Form: React.FC<FormProps> = ({ className, color = 'default' }) => {
       <form
         onSubmit={handleSubmit}
         className={cn(
-          "flex gap-6 lg:gap-3 flex-wrap lg:flex-row lg:items-center"
+          "flex gap-6 lg:gap-3 flex-wrap flex-col lg:flex-row lg:items-center"
         )}
       >
         {/* Имя */}
@@ -81,8 +109,8 @@ export const Form: React.FC<FormProps> = ({ className, color = 'default' }) => {
         </div>
         {/* Кнопка */}
         <div className="flex items-end w-full lg:w-auto">
-          <CustomButton variant="base2" type="submit" className="w-full" disabled={!isFormValid}>
-            Оставить заявку
+          <CustomButton variant="base2" type="submit" className="w-full" disabled={!isFormValid || isSubmitting}>
+            {isSubmitting ? 'Отправка...' : 'Оставить заявку'}
           </CustomButton>
         </div>
       </form>
@@ -95,7 +123,7 @@ export const Form: React.FC<FormProps> = ({ className, color = 'default' }) => {
             className="mr-3"
             required
           />
-          Вы соглашаетесь с правилами пользования сайтом.
+          <span>Вы соглашаетесь <a href="/terms" className="text-hotel-dark-blue inline border-b" target="_blank">правилами пользования сайтом</a>.</span>
         </label>
         <label className="flex items-center cursor-pointer text-gray-500">
           <Checkbox
@@ -104,9 +132,23 @@ export const Form: React.FC<FormProps> = ({ className, color = 'default' }) => {
             className="mr-3"
             required
           />
-          Вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных.
+          <span>Вы соглашаетесь с <a href="/privacy-policy" className="text-hotel-dark-blue inline border-b" target="_blank">политикой конфиденциальности</a> и даете свое согласие на <a href="/personal" className="text-hotel-dark-blue inline border-b" target="_blank">обработку персональных данных</a>.</span>
         </label>
       </div>
+      {/* Диалог */}
+      {dialogOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40">
+          <div className="bg-white rounded-lg shadow-lg p-8 max-w-xs w-full text-center">
+            <div className="mb-4">{dialogText}</div>
+            <button
+              className="mt-2 px-4 py-2 bg-hotel-dark-blue text-white rounded hover:bg-hotel-blue"
+              onClick={() => setDialogOpen(false)}
+            >
+              Закрыть
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }; 

@@ -4,12 +4,12 @@ import SliderCounter from "../ui/slider-counter";
 
 // Sample gallery images - replace with actual images from your project
 const galleryImages = [
-    "/assets/images/services/service-1.jpg",
-    "/assets/images/services/service-2.jpg",
-    "/assets/images/services/service-3.jpg",
-    "/assets/images/services/service-4.jpg",
-    "/assets/images/services/service-5.jpg",
-    "/assets/images/services/service-1.jpg",
+    "/assets/images/gallery/1.jpg",
+    "/assets/images/gallery/2.jpg",
+    "/assets/images/gallery/3.jpg",
+    "/assets/images/gallery/4.jpg",
+    "/assets/images/gallery/5.jpg",
+    "/assets/images/gallery/6.jpg",
 ];
 
 const ImageGallerySlider = () => {
@@ -26,6 +26,7 @@ const ImageGallerySlider = () => {
         const handleResize = () => {
             if (window.innerWidth < 768) {
                 setVisibleSlides(1);
+                setCurrentSlide(0);
             } else {
                 setVisibleSlides(3);
             }
@@ -121,7 +122,7 @@ const ImageGallerySlider = () => {
                 ))}
             </div>
 
-            <div className="absolute bottom-6 lg:right-6 flex items-center gap-8 w-full justify-between lg:justify-end px-4 lg:px-0 text-white">
+            <div className="absolute bottom-6 lg:right-6 flex items-center gap-8 w-full justify-between lg:justify-end px-4 xl:px-0 text-white">
                 <SliderCounter current={currentSlide + 1} total={galleryImages.length - visibleSlides + 1} />
                 <SliderNavigation onPrev={handlePrev} onNext={handleNext} />
             </div>

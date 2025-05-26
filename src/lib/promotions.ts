@@ -13,7 +13,8 @@ const promotions = [
       link: "/booking",
       button_text: "Забронировать по акции",
       expiry: "до 30.12.2025",
-      isPromotion: true
+      isPromo: true,
+      isSpecial:false
     },
     {
       id: 2,
@@ -28,7 +29,8 @@ const promotions = [
       link: "/booking",
       button_text: "Забронировать по акции",
       expiry: "до 30.12.2025",
-      isPromotion: true
+      isPromo: true,
+      isSpecial:false
     },
     {
       id: 3,
@@ -43,7 +45,8 @@ const promotions = [
       link: "/booking",
       button_text: "Забронировать по акции",
       expiry: "до 30.12.2025",
-      isPromotion: true
+      isPromo: true,
+      isSpecial:false
     },
     {
       id: 4,
@@ -57,7 +60,9 @@ const promotions = [
       image: "/assets/images/promotions/4.jpg",
       link: "/booking",
       button_text: "Оставить заявку",
-      expiry: "до 30.12.2025"
+      expiry: "до 30.12.2025",
+      isPromo: true,
+      isSpecial:false
     },
     {
       id: 5,
@@ -67,7 +72,8 @@ const promotions = [
       image: "/assets/images/promotions/5.jpg",
       link: "/booking",
       button_text: "Забронировать по акции",
-      isPromotion: true
+      isPromo: true,
+      isSpecial:false
     },
     {
       id: 6,
@@ -79,9 +85,11 @@ const promotions = [
         "Скидка 15% на услуги ресторана",
         "Сообщите дату рождения при заезде!"
       ],
-      image: "/assets/images/promotions/3.jpg",
+      image: "/assets/images/promotions/6.jpg",
       link: "/booking",
-      button_text: "Спец. предложение"
+      button_text: "Спец. предложение",
+      isPromo: true,
+      isSpecial:false
     },
     {
       id: 7,
@@ -92,9 +100,11 @@ const promotions = [
         "Не действует на заказы через Room Service",
         "Для получения скидки предъявите официанту скан бронирования номера"
       ],
-      image: "/assets/images/promotions/4.jpg",
+      image: "/assets/images/promotions/7.jpg",
       link: "/booking",
-      button_text: "Узнать подробнее"
+      button_text: "Узнать подробнее",
+      isPromo: false,
+      isSpecial:true
     }
   ];
 
