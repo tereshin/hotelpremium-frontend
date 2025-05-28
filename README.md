@@ -1,5 +1,5 @@
-![Обложка](https://electrohotel.ru/images/cover-git.jpg)
-# Гостинничный комплекс «Электросталь»
+![Обложка](https://dev1.tereshin.co/images/cover.jpg)
+# Гостинничный комплекс «Premium»
 
 Для разработки этого сайта я использовал Cursor и MCP сервер для переноса компонентов из Figma.
 
@@ -7,10 +7,10 @@
 
 ```sh
 # Клонируем
-git clone "https://github.com/tereshin/electrohotel-frontend"
+git clone "https://github.com/tereshin/hotelpremium-frontend"
 
 # Переходим в папку проекта
-cd electrohotel-frontend
+cd hotelpremium-frontend
 
 # Устанавливаем
 npm i
