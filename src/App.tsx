@@ -13,8 +13,6 @@ import ScrollToTop from "./hooks/scrollToTop";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse" 
 import Barbecue from "./pages/Barbecue";
-import Booking from "./pages/Booking";
-import Sauna from "./pages/Sauna";
 import Restourant from "./pages/Restourant";
 import RoomService from "./pages/RoomService";
 import RentBike from "./pages/RentBike";
@@ -40,8 +38,6 @@ const App = () => (
           <Route path="/personal" element={<Personal />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/barbecue" element={<Barbecue />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/sauna" element={<Sauna />} />
           <Route path="/restaurant" element={<Restourant />} />
           <Route path="/room-service" element={<RoomService />} />
           <Route path="/rent-bike" element={<RentBike />} />

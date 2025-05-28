@@ -10,27 +10,23 @@ interface MenuSlideData {
 const menuSlides: MenuSlideData[] = [
   {
     id: 1,
-    image: "/assets/images/restaurant/menu-1.png",
+    image: "/assets/images/restaurant/menu-1.jpg",
   },
   {
     id: 2,
-    image: "/assets/images/restaurant/menu-2.png",
+    image: "/assets/images/restaurant/menu-2.jpg",
   },
   {
     id: 3,
-    image: "/assets/images/restaurant/menu-3.png",
+    image: "/assets/images/restaurant/menu-3.jpg",
   },
   {
     id: 4,
-    image: "/assets/images/restaurant/menu-4.png",
+    image: "/assets/images/restaurant/menu-4.jpg",
   },
   {
     id: 5,
-    image: "/assets/images/restaurant/menu-5.png",
-  },
-  {
-    id: 6,
-    image: "/assets/images/restaurant/menu-6.png",
+    image: "/assets/images/restaurant/menu-5.jpg",
   }
 ];
 

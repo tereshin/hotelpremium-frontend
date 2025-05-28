@@ -59,8 +59,8 @@ const Header = () => {
           </div>
         </div>
         <div className={cn(
-          'fixed lg:top-14 top-0 left-0 right-0 z-40 w-full transition-all duration-150 py-2.5 lg:py-4',
-          isScrolled ? 'lg:top-0 bg-black/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+          'fixed lg:top-14 top-0 left-0 right-0 z-40 w-full transition-all border-b duration-150 py-2.5 lg:py-4',
+          isScrolled ? 'lg:top-0 bg-black/80 backdrop-blur-sm shadow-lg border-transparent' : 'bg-transparent border-white/20'
         )}>
           <div className="max-w-content mx-auto flex lg:justify-between items-center px-4 xl:px-0">
 
@@ -86,9 +86,8 @@ const Header = () => {
 
             {/* Desktop Menu */}
             <nav className="hidden xl:flex space-x-6 text-hotel-off-white font-montserrat">
-              <Link to="/booking" className="hover:opacity-80 transition-opacity text-sm uppercase">Номера</Link>
+              <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" target="_blank" className="hover:opacity-80 transition-opacity text-sm uppercase">Номера</Link>
               <Link to="/barbecue" className="hover:opacity-80 transition-opacity text-sm uppercase">Аренда беседок</Link>
-              <Link to="/sauna" className="hover:opacity-80 transition-opacity text-sm uppercase">Сауна и хаммам</Link>
               <Link to="/promotions" className="hover:opacity-80 transition-opacity text-sm uppercase">Акции</Link>
               <Link to="/services" className="hover:opacity-80 transition-opacity text-sm uppercase">Услуги</Link>
               <Link to="/restaurant" className="hover:opacity-80 transition-opacity text-sm uppercase">Ресторан и караоке</Link>
@@ -150,7 +149,7 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="/booking" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Номера</Link>
+                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" target="_blank" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Номера</Link>
               </motion.div>
               <motion.div
                 custom={3}
@@ -160,14 +159,7 @@ const Header = () => {
               >
                 <Link to="/barbecue" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Аренда беседок</Link>
               </motion.div>
-              <motion.div
-                custom={4}
-                variants={menuItemVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                <Link to="/sauna" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Сауна и хаммам</Link>
-              </motion.div>
+              
               <motion.div
                 custom={5}
                 variants={menuItemVariants}

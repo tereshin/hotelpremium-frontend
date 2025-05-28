@@ -45,7 +45,7 @@ const Breakfast = () => {
                                     Стоимость
                                 </h2>
                                 <p className="flex lg:items-center gap-2"><CheckIcon className="relative top-1 lg:top-0" />
-                                1 000 руб. за час (До 4-ех человек. Каждый последующий + 500 руб.)
+                                Стоимость завтрака 300р на человека
                                 </p>
                             </div>
 

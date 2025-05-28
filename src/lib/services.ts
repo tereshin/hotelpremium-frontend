@@ -7,13 +7,6 @@ const services = [
       link: "/barbecue"
     },
     {
-      id: 2,
-      title: "Сауна и хамам",
-      description: "",
-      image: "/assets/images/services/service-2.jpg",
-      link: "/sauna"
-    },
-    {
       id: 3,
       title: "Room Service",
       description: "",

@@ -73,7 +73,7 @@ const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, classNa
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      //nextSlide();
     }, 5000);
     return () => clearInterval(interval);
   }, [current]);
@@ -83,7 +83,7 @@ const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, classNa
   return (
     <div className={cn("relative flex flex-col md:gap-12", className)}>
       <div
-        className="flex transition-transform duration-500 ease-in-out -mb-5 lg:mb-0"
+        className="flex transition-transform duration-500 ease-in-out mb-4"
         style={{ transform: `translateX(-${current * slideWidth}%)` }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}

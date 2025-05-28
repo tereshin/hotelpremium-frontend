@@ -34,23 +34,23 @@ const Footer = () => {
             <div className="flex flex-col space-y-6">
               <h3 className="text-lg font-bold font-montserrat">Номера</h3>
               <div className="flex flex-col space-y-[15px]">
-                <Link to="/booking" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
+                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
                   Эконом с 1 двуспальной кроватью
                 </Link>
-                <Link to="/booking" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
+                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
                   Стандарт с 1 двуспальной кроватью
                 </Link>
-                <Link to="/booking" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
+                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
                   Стандарт с 2мя кроватями
                 </Link>
-                <Link to="/booking" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
+                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
                   Комфорт с 1 двуспальной кроватью
                 </Link>
-                <Link to="/booking" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
+                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
                   ВИП, 2 комнаты
                 </Link>
-                <Link to="/booking" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
-                  Апартаменты с 2 отдельными кроватями + диванчик
+                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" className="text-sm font-normal font-montserrat hover:text-[#6896BF] transition-colors">
+                  Апартаменты с одной кроватью
                 </Link>
               </div>
             </div>

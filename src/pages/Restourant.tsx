@@ -111,7 +111,7 @@ const Restourant = () => {
         <div className="max-w-content text-white w-full mx-auto relative">
           <Title className="text-white absolute top-10 left-3 z-10 hidden lg:block">Галерея</Title>
           <ImageGallerySlider />
-          <div className="absolute h-full w-full lg:w-[35%] bg-gradient-to-t from-transparent to-black z-1 lg:-left-10 top-0 pointer-events-none"/>
+          <div className="hidden lg:block absolute h-full w-full lg:w-[35%] bg-gradient-to-t from-transparent to-black z-1 lg:-left-10 top-0 pointer-events-none"/>
         </div>
       </section>
       <Footer />

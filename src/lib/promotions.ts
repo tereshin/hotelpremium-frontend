@@ -10,7 +10,7 @@ const promotions = [
         "Действует только при онлайн оплате"
       ],
       image: "/assets/images/promotions/1.jpg",
-      link: "/booking",
+      link: "https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru",
       button_text: "Забронировать по акции",
       expiry: "до 30.12.2025",
       isPromo: true,
@@ -26,7 +26,7 @@ const promotions = [
         "Не суммируется с другими специальными предложениями"
       ],
       image: "/assets/images/promotions/2.jpg",
-      link: "/booking",
+      link: "https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru",
       button_text: "Забронировать по акции",
       expiry: "до 30.12.2025",
       isPromo: true,
@@ -42,7 +42,7 @@ const promotions = [
         "Не суммируется с другими специальными предложениями"
       ],
       image: "/assets/images/promotions/3.jpg",
-      link: "/booking",
+      link: "https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru",
       button_text: "Забронировать по акции",
       expiry: "до 30.12.2025",
       isPromo: true,
@@ -58,7 +58,7 @@ const promotions = [
         "Суммируется с другими специальными предложениями"
       ],
       image: "/assets/images/promotions/4.jpg",
-      link: "/booking",
+      link: "https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru",
       button_text: "Оставить заявку",
       expiry: "до 30.12.2025",
       isPromo: true,
@@ -70,7 +70,7 @@ const promotions = [
       description: "Специальное предложение на проживание. Позвольте нам позаботиться о вашем вкусном завтраке прямо в Гостиничном комплексе. Забронируйте ваше проживание сразу с включенным завтраком.",
       conditions: [],
       image: "/assets/images/promotions/5.jpg",
-      link: "/booking",
+      link: "https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru",
       button_text: "Забронировать по акции",
       isPromo: true,
       isSpecial:false
@@ -86,7 +86,7 @@ const promotions = [
         "Сообщите дату рождения при заезде!"
       ],
       image: "/assets/images/promotions/6.jpg",
-      link: "/booking",
+      link: "https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru",
       button_text: "Спец. предложение",
       isPromo: true,
       isSpecial:false
@@ -101,7 +101,7 @@ const promotions = [
         "Для получения скидки предъявите официанту скан бронирования номера"
       ],
       image: "/assets/images/promotions/7.jpg",
-      link: "/booking",
+      link: "https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru",
       button_text: "Узнать подробнее",
       isPromo: false,
       isSpecial:true

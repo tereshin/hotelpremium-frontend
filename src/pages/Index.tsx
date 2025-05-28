@@ -23,7 +23,7 @@ const Index = () => {
         </section>
 
         {/* Group Discount Section */}
-        <div className="-mb-6 mt-[25px] lg:my-[100px] mx-4 max-w-[2048px] md:px-4 lg:mx-auto">
+        <div className="my-[25px] lg:my-[100px] mx-4 max-w-[2048px] md:px-4 lg:mx-auto">
           <TextImageSection
             title="О гостиничном <br>комплексе"
             text="Гостиничный комплекс «Premium», расположен в тихом и уютном месте самого сердца г. Щелково, на берегу реки Клязьма. У нас вы найдете свой тихий уголок, вдали от шумных улиц, где сможете прекрасно провести время, будучи в деловой поездке или устраивая романтичный вечер при свечах." image="/assets/images/home/2.jpg" button={{ text: 'Текущие акции', link: '/promotions' }}
@@ -56,7 +56,7 @@ const Index = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-10 lg:py-20 px-4 lg:px-10 max-w-[2048px] mx-auto">
+        <section className="py-5 lg:py-10 px-4 lg:px-10 max-w-[2048px] mx-auto">
           <div className="max-w-content w-full mx-auto flex flex-col gap-5 lg:gap-12">
             <Title>Мы позаботимся<br />о всем</Title>
             <ServicesSlider />
@@ -83,7 +83,7 @@ const Index = () => {
           <div className="max-w-content text-white w-full mx-auto relative">
             <Title className="text-white absolute top-10 left-3 z-10 hidden lg:block">Галерея</Title>
             <ImageGallerySlider />
-            <div className="absolute h-full w-full lg:w-[35%] bg-gradient-to-t from-transparent to-black z-1 lg:-left-10 top-0 pointer-events-none"/>
+            <div className="hidden lg:block absolute h-full w-full lg:w-[35%] bg-gradient-to-t from-transparent to-black z-1 lg:-left-10 top-0 pointer-events-none"/>
           </div>
         </section>
         

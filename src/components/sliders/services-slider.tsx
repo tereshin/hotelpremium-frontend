@@ -111,7 +111,7 @@ const ServicesSlider = () => {
     >
       <div
         ref={sliderRef}
-        className="flex touch-pan-y gap-[10px] lg:gap-[30px] transition-all duration-500 ease-in-out mb-6 lg:mb-10"
+        className="flex touch-pan-y gap-[10px] lg:gap-[30px] transition-all duration-500 ease-in-out mb-4 lg:mb-10"
         style={{ transform: `translateX(${translateX}px)` }}
       >
         {services

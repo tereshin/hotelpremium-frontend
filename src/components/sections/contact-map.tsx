@@ -52,7 +52,7 @@ const ContactMap: React.FC = () => {
           {/* Map Image with Rounded Corners */}
           <div className="w-full top-0 left-0 absolute h-full overflow-hidden rounded-md">
             <img
-              src="/images/map-image.png"
+              src="/images/map-image.jpg"
               alt="Hotel Premium Map Location"
               className="w-full h-full object-cover hidden lg:block"
               loading="lazy"

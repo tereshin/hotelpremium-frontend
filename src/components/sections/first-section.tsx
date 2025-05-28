@@ -51,8 +51,8 @@ const FirstSection: React.FC<FirstSectionProps> = ({ title = 'Заголовок
 
     </div>
       <div className="max-w-content mx-auto flex flex-col gap-4 lg:gap-6 pt-8 lg:pt-12 px-4 xl:px-0">
-        <div className="uppercase text-sm font-montserrat font-medium text-[#8B9197]">
-          <div className="flex items-center gap-4">
+        <div className="uppercase text-xs lg:text-sm font-montserrat font-medium text-[#8B9197]">
+          <div className="flex items-center gap-2 lg:gap-4">
             <div className="item">
               <a href="/" className="text-[#090F15]">Главная</a>
             </div>
@@ -62,7 +62,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ title = 'Заголовок
             </div>
           </div>
         </div>
-        <h1 className="w-full text-4xl lg:text-5xl uppercase max-w-4xl mb-6 tracking-wide">
+        <h1 className="w-full text-3xl lg:text-5xl uppercase max-w-4xl mb-3 lg:mb-6 tracking-wide">
           <span className="block" dangerouslySetInnerHTML={{ __html: title }} />
         </h1>
       </div>

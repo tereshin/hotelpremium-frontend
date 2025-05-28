@@ -20,7 +20,7 @@ const HeroImage: React.FC<HeroImageProps> = ({ title, subtitle, image, className
     if (!image) return null;
 
     return (
-        <div className={cn("relative overflow-hidden min-h-[800px] max-h-[1000px] w-full", className)}>
+        <div className={cn("relative overflow-hidden min-h-[730px] max-h-[1000px] w-full", className)}>
             <div
                 className={cn(
                     "absolute inset-0 transition-all duration-700 ease-in-out",
@@ -39,7 +39,7 @@ const HeroImage: React.FC<HeroImageProps> = ({ title, subtitle, image, className
                     <div className="absolute inset-0 bg-black bg-opacity-10"></div>
                 </div>
                 <div className="relative h-full w-full min-h-[700px] max-w-content flex flex-col lg:flex-row mx-auto justify-center lg:justify-between items-center lg:max-h-[100%] pt-12 lg:pt-24 px-4 xl:px-0">
-                    <h1 className="w-full text-hotel-off-white text-5xl lg:text-7xl uppercase max-w-4xl mb-6 tracking-wide animate-fade-in">
+                    <h1 className="w-full text-hotel-off-white text-4xl lg:text-7xl uppercase max-w-4xl mb-6 tracking-wide animate-fade-in">
                         <span className="block" dangerouslySetInnerHTML={{ __html: title }} />
                         <span className="block text-4xl lg:text-7xl lg:text-8xl">{subtitle}</span>
                     </h1>
