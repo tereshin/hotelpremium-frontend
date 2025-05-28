@@ -7,7 +7,7 @@ interface TitleProps {
 }
 
 const titleSizes = {
-  large: 'text-4xl md:text-5xl',
+  large: 'text-3xl md:text-5xl',
   medium: 'text-2xl md:text-3xl',
   small: 'text-xl md:text-2xl',
 }
