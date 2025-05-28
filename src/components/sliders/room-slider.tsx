@@ -85,11 +85,11 @@ const RoomSlider: React.FC<RoomSliderProps> = ({ rooms, className }) => {
           {rooms.map((room) => (
             <div 
               key={room.id} 
-              className="pr-5 md:pr-14" 
+              className="pr-5 md:pr-6" 
               style={{ width: `${slideWidth}%`, flex: `0 0 ${slideWidth}%` }}
             >
               <div className="rounded-lg flex flex-col gap-6 max-w-[670px]">
-                <div className=" rounded-t-lg relative">
+                <div className="rounded-sm relative overflow-hidden">
                   <img 
                     src={room.image} 
                     alt={room.title} 
@@ -97,12 +97,12 @@ const RoomSlider: React.FC<RoomSliderProps> = ({ rooms, className }) => {
                     loading="lazy"
                   />
                   <div className="flex items-center bg-black bg-opacity-50 text-white px-6 py-3 rounded-full absolute bottom-4 left-4">
-                    <img src="/images/rooms/area-icon-1.svg" className="w-5 h-5 mr-2" alt="Area" loading="lazy" />
+                    <img src="/assets/images/rooms/area-icon-1.svg" className="w-5 h-5 mr-2" alt="Area" loading="lazy" />
                     <span className="text-sm">{room.area} м²</span>
                   </div>
                 </div>
                 <div className="bg-white flex flex-col gap-4 items-start">
-                  <h3 className="text-xl font-normal font-medium text-hotel-darkest-green truncate uppercase overflow-hidden text-ellipsis w-full">{room.title}</h3>
+                  <h3 className="text-xl font-normal font-medium text-hotel-darkest-blue truncate uppercase overflow-hidden text-ellipsis w-full">{room.title}</h3>
                   
                   <ul className="flex flex-col gap-3 text-sm md:text-[15px] leading-[1.73em] mb-4 lg:w-1/2 ml-2">
                     <li className="text-[15px] leading-[1.35em] opacity-70 flex gap-3">
@@ -122,7 +122,7 @@ const RoomSlider: React.FC<RoomSliderProps> = ({ rooms, className }) => {
         </div>
 
         {/* Navigation */}
-        <SliderNavigation onPrev={prevSlide} onNext={nextSlide} className="mx-auto" />
+        <SliderNavigation onPrev={prevSlide} onNext={nextSlide} className="ml-auto" />
       </div>
     </>
   );

@@ -6,11 +6,10 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { cn } from '@/lib/utils';
 import { CustomButton } from '../ui/custom-button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import ArrowIcon from '../icons/ArrowIcon';
 
 interface BookingFormProps {
   className?: string;
-  variant?: 'horizontal' | 'vertical';
+  variant?: 'horizontal' | 'vertical' | 'default';
   color?: 'default' | 'white';
 }
 
@@ -65,9 +64,9 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
     // Format dates as DD-MM-YYYY
     const formattedCheckInDate = format(checkInDate, 'dd-MM-yyyy');
     const formattedCheckOutDate = format(checkOutDate, 'dd-MM-yyyy');
-    
+
     // Construct the URL with all required parameters
-    const baseUrl = 'https://reservationsteps.ru/rooms/index/4bdeba76-9f0b-4007-8f64-7fcd6aff2f1a';
+    const baseUrl = 'https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884';
     const params = new URLSearchParams({
       lang: 'ru',
       scroll_to_rooms: '1',
@@ -88,15 +87,15 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
       dto: formattedCheckOutDate,
       adults: adults.toString()
     });
-    
+
     // Add children parameter only if children are selected
     if (children > 0) {
       const childrenArray = Array(children).fill('10');
       params.append('children', JSON.stringify(childrenArray));
     }
-    
+
     const redirectUrl = `${baseUrl}?${params.toString()}`;
-    
+
     // Redirect to the URL
     window.location.href = redirectUrl;
   };
@@ -108,33 +107,35 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
 
   return (
     <div className={cn("rounded-lg mx-auto relative z-10 bg-transparent", className)}>
-      <form 
-        onSubmit={handleSubmit} 
+      <form
+        onSubmit={handleSubmit}
         className={cn(
-          "grid gap-6 md:gap-8",
-          variant === 'horizontal' ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4" : "grid-cols-1"
+          "flex gap-6 md:gap-8",
+          variant === 'default' ? "flex-wrap" : "",
+          variant === 'horizontal' ? "lg:flex-row lg:items-center" : "",
+          variant === 'vertical' ? "flex-col" : ""
         )}
       >
         {/* Check-in Date */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium">Заезд</label>
+        <div className={cn("space-y-1 font-montserrat w-full lg:w-[calc(50%-16px)]", variant === 'default' ? "lg:w-[calc(50%-16px)]" : "lg:w-full")}>
+
           <Popover open={checkInOpen} onOpenChange={setCheckInOpen}>
             <PopoverTrigger asChild>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className={cn(
-                  "w-full flex items-center justify-between bg-transparent border-b border-gray-400 pb-4 focus:outline-none",
+                  "w-full flex flex-wrap items-center justify-between bg-transparent border border-gray-200 rounded-sm py-3 px-5 font-semibold text-hotel-dark-blue focus:outline-none",
                   color === 'default' && 'text-white border-white'
                 )}
-              >
+              ><label className="block text-sm text-gray-500 w-full text-left font-normal">Заезд</label>
                 {checkInDate ? format(checkInDate, 'PP') : <span>Выберите дату</span>}
-                <CalendarIcon className="ml-2 h-4 w-4 opacity-70" />
+                <CalendarIcon className="ml-2 h-4 w-4 opacity-70 relative -top-2.5" />
               </button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0 bg-white" align="start">
-              <Calendar 
-                mode="single" 
-                selected={checkInDate} 
+              <Calendar
+                mode="single"
+                selected={checkInDate}
                 onSelect={(date) => {
                   if (date) {
                     date.setHours(0, 0, 0, 0);
@@ -142,34 +143,34 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
                     setCheckInOpen(false);
                   }
                 }}
-                disabled={(date) => date < new Date()} 
-                  
-                className="pointer-events-auto" 
+                disabled={(date) => date < new Date()}
+
+                className="pointer-events-auto"
               />
             </PopoverContent>
           </Popover>
         </div>
-        
+
         {/* Check-out Date */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium">Выезд</label>
+        <div className={cn("space-y-1 font-montserrat w-full lg:w-[calc(50%-16px)]", variant === 'default' ? "lg:w-[calc(50%-16px)]" : "lg:w-full")}>
           <Popover open={checkOutOpen} onOpenChange={setCheckOutOpen}>
             <PopoverTrigger asChild>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className={cn(
-                  "w-full flex items-center justify-between bg-transparent border-b border-gray-400 pb-4 focus:outline-none",
+                  "w-full flex flex-wrap items-center justify-between bg-transparent border border-gray-200 rounded-sm py-3 px-5 font-semibold text-hotel-dark-blue focus:outline-none",
                   color === 'default' && 'text-white border-white'
                 )}
               >
+                <label className="block text-sm text-gray-500 w-full text-left font-normal">Выезд</label>
                 {checkOutDate ? format(checkOutDate, 'PP') : <span>Выберите дату</span>}
-                <CalendarIcon className="ml-2 h-4 w-4 opacity-70" />
+                <CalendarIcon className="ml-2 h-4 w-4 opacity-70 relative -top-2.5" />
               </button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0 bg-white" align="start">
-              <Calendar 
-                mode="single" 
-                selected={checkOutDate} 
+              <Calendar
+                mode="single"
+                selected={checkOutDate}
                 onSelect={(date) => {
                   if (date && checkInDate) {
                     date.setHours(0, 0, 0, 0);
@@ -183,35 +184,35 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
                     setCheckOutOpen(false);
                   }
                 }}
-                disabled={(date) => date <= (checkInDate || new Date())} 
-                  
-                className="pointer-events-auto" 
+                disabled={(date) => date <= (checkInDate || new Date())}
+
+                className="pointer-events-auto"
               />
             </PopoverContent>
           </Popover>
         </div>
-        
+
         {/* Guests */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium">Кол-во гостей</label>
+        <div className="space-y-2 font-montserrat w-full">
+
           <DropdownMenu open={open} onOpenChange={(open) => setOpen(open)}>
             <DropdownMenuTrigger asChild
-             onPointerDown={(e) => e.preventDefault()}
-             onClick={() => setOpen(!open)}>
-              <button 
-                type="button" 
+              onPointerDown={(e) => e.preventDefault()}
+              onClick={() => setOpen(!open)}>
+              <button
+                type="button"
                 className={cn(
-                  "w-full flex items-center justify-between bg-transparent border-b border-gray-400 pb-4 focus:outline-none",
+                  "w-full flex flex-wrap items-center justify-between bg-transparent border border-gray-200 rounded-sm py-3 px-5 font-semibold text-hotel-dark-blue focus:outline-none",
                   color === 'default' && 'text-white border-white'
                 )}
-              >
+              ><label className="block text-sm text-gray-500 w-full text-left font-normal">Кол-во гостей</label>
                 <div className="flex items-center">
                   <Users className="mr-2 h-4 w-4 opacity-70" />
                   <span>
                     {adults} взрослы{adults !== 1 ? 'х' : 'й'}{children > 0 ? `, ${children} ${children !== 1 ? 'ребенка' : 'ребенок'}` : ''}
                   </span>
                 </div>
-                <ChevronDown className="h-4 w-4 opacity-70" />
+                <ChevronDown className="h-4 w-4 opacity-70 relative -top-2.5" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-56 p-3 bg-white">
@@ -242,11 +243,11 @@ export const BookingForm = forwardRef<BookingFormRef, BookingFormProps>(({ class
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        
+
         {/* Submit Button */}
-        <div className="flex items-end">
-          <CustomButton variant="base1" type="submit" className="w-full" disabled={!isFormValid}>
-            Забронировать номер <ArrowIcon />
+        <div className="flex items-end w-full lg:w-auto">
+          <CustomButton variant="base2" size="lg" type="submit" className="w-full" disabled={!isFormValid}>
+            Забронировать
           </CustomButton>
         </div>
       </form>

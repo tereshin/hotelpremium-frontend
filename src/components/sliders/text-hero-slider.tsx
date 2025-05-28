@@ -168,7 +168,7 @@ const TextHeroSlider: React.FC<TextHeroSliderProps> = ({ slides, className, navi
                 {href ? (<h3  onClick={(e) => {
                         e.preventDefault();
                         navigate(href);
-                      }}  className="text-2xl lg:text-3xl text-hotel-darkest-green uppercase">{slide.title}</h3> ) : (<h3 className="text-2xl lg:text-3xl text-hotel-darkest-green uppercase">{slide.title}</h3>)}
+                      }}  className="text-2xl lg:text-3xl text-hotel-darkest-blue uppercase">{slide.title}</h3> ) : (<h3 className="text-2xl lg:text-3xl text-hotel-darkest-blue uppercase">{slide.title}</h3>)}
                   {href ? (
                       <a href={href} onClick={(e) => {
                         e.preventDefault();

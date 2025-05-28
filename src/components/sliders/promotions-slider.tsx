@@ -1,9 +1,9 @@
 import React, { useState, useEffect, TouchEvent } from 'react';
 // import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import ArrowIcon from '../icons/ArrowIcon';
 import SliderNavigation from '../ui/slider-navigation';
-import { useNavigate } from 'react-router-dom';
+import SliderCounter from '../ui/slider-counter';
+import TextImageSection from '../sections/text-image-section';
 
 interface PromotionSlide {
   id: number;
@@ -11,6 +11,9 @@ interface PromotionSlide {
   description: string;
   image: string;
   link: string;
+  reverse?: boolean;
+  isPromo?: boolean;
+  isSpecial?: boolean;
 }
 
 interface PromotionsSliderProps {
@@ -19,33 +22,26 @@ interface PromotionsSliderProps {
 }
 
 const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, className }) => {
-  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // Calculate number of promotions to display
-  let slidesToShow = 2.8;
-  if(window.innerWidth < 1180) {
-    slidesToShow = 2;
-  }
-  if(window.innerWidth < 768) {
-    slidesToShow = 1.1;
-  }
+  // Set to always show one slide
+  const slidesToShow = 1;
   const slideWidth = 100 / slidesToShow;
 
   const nextSlide = () => {
     if (transitioning) return;
     setTransitioning(true);
-    setCurrent((prev) => (prev >= promotions.length - slidesToShow ? 0 : prev + 1));
+    setCurrent((prev) => (prev >= promotions.length - 1 ? 0 : prev + 1));
     setTimeout(() => setTransitioning(false), 500);
   };
 
   const prevSlide = () => {
     if (transitioning) return;
     setTransitioning(true);
-    setCurrent((prev) => (prev <= 0 ? Math.max(0, promotions.length - slidesToShow) : prev - 1));
+    setCurrent((prev) => (prev <= 0 ? promotions.length - 1 : prev - 1));
     setTimeout(() => setTransitioning(false), 500);
   };
 
@@ -59,7 +55,7 @@ const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, classNa
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -77,7 +73,7 @@ const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, classNa
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      //nextSlide();
     }, 5000);
     return () => clearInterval(interval);
   }, [current]);
@@ -85,45 +81,46 @@ const PromotionsSlider: React.FC<PromotionsSliderProps> = ({ promotions, classNa
   if (!promotions || promotions.length === 0) return null;
 
   return (
-    <div className={cn("relative flex flex-col gap-8 md:gap-12", className)}>
-      <div 
-        className="flex transition-transform duration-500 ease-in-out"
+    <div className={cn("relative flex flex-col md:gap-12", className)}>
+      <div
+        className="flex transition-transform duration-500 ease-in-out mb-4"
         style={{ transform: `translateX(-${current * slideWidth}%)` }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {promotions.map((promo) => (
-          <div 
-            key={promo.id} 
-            className="pr-5 md:pr-14" 
-            style={{ width: `${slideWidth}%`, flex: `0 0 ${slideWidth}%` }}
+        {promotions.map((promo, idx) => (
+          <div
+            key={promo.id}
+            style={{
+              width: `${slideWidth}%`,
+              flex: `0 0 ${slideWidth}%`,
+              transition: 'transform 0.2s ease-in-out, opacity 0.2s ease-in-out',
+              opacity: idx === current ? 1 : 0,
+              pointerEvents: idx === current ? 'auto' : 'none',
+            }}
           >
-            <a onClick={() => navigate('/promotions')} className="cursor-pointer block group  max-w-[450px]">
-              <div className="rounded-lg flex flex-col gap-6">
-                <div className="rounded-t-lg">
-                  <img 
-                    src={promo.image} 
-                    alt={promo.title} 
-                    className="w-full h-[339px] md:h-[456px] object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="bg-white flex flex-col gap-4 items-start">
-                  <h3 className="text-xl font-normal font-medium text-hotel-darkest-green uppercase flex gap-4 items-center ">
-                    {promo.title}
-                    <ArrowIcon />
-                  </h3>
-                  <p className="text-gray-600 line-clamp-3">{promo.description}</p>
-                </div>
-              </div>
-            </a>
+            <TextImageSection
+              title={promo.title}
+              text={promo.description}
+              image={promo.image}
+              button={{
+                text: "Подробнее",
+                link: promo.link
+              }}
+              reverse={promo.reverse}
+              isPromo={promo.isPromo}
+              isSpecial={promo.isSpecial}
+            />
           </div>
         ))}
       </div>
-
-      {/* Navigation */}
-      <SliderNavigation onPrev={prevSlide} onNext={nextSlide} className="mx-auto" />
+      <div className="relative flex justify-between items-center gap-8 lg:ml-auto lg:absolute lg:bottom-8 lg:right-0">
+        {/* Counter */}
+        <SliderCounter current={current + 1} total={promotions.length} />
+        {/* Navigation */}
+        <SliderNavigation onPrev={prevSlide} onNext={nextSlide} className="text-[#01396C]" />
+      </div>
     </div>
   );
 };

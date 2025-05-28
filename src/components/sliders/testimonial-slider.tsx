@@ -142,7 +142,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ testimonials, cla
       </div>
 
       {/* Navigation */}
-      <SliderNavigation onPrev={prevSlide} onNext={nextSlide} className="mx-auto" />
+      <SliderNavigation onPrev={prevSlide} onNext={nextSlide} className="ml-auto" />
     </div>
   );
 };

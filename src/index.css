@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@100..900&display=swap');
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -96,13 +96,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-['TT_Norms'];
+    @apply bg-background text-foreground font-['Forum'];
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-['TT_Drugs_Trial'];
-    font-weight: 300;
+    @apply font-['Forum'];
+    font-weight: 400;
   }
 }
 
@@ -135,69 +135,9 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-@font-face {
-  font-family: 'TT Norms';
-  src: url('/assets/fonts/tt-norms/TTNorms-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'TT Norms';
-  src: url('/assets/fonts/tt-norms/TTNorms-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TT Norms';
-  src: url('/assets/fonts/tt-norms/TTNorms-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TT Norms';
-  src: url('/assets/fonts/tt-norms/TTNorms-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'TT Drugs Trial';
-  src: url('/assets/fonts/tt-drugs-trial/TT Drugs Trial Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TT Drugs Trial';
-  src: url('/assets/fonts/tt-drugs-trial/TT Drugs Trial Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TT Drugs Trial';
-  src: url('/assets/fonts/tt-drugs-trial/TT Drugs Trial Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TT Drugs Trial';
-  src: url('/assets/fonts/tt-drugs-trial/TT Drugs Trial Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-.font-tt-drugs-trial {
-  font-family: 'TT Drugs Trial', sans-serif;
-}
-
-.font-tt-norms {
-  font-family: 'TT Norms', sans-serif;
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .font-smoothing-auto {

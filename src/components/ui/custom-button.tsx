@@ -5,21 +5,21 @@ import { Button } from "./button";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const buttonVariants = cva(
-  "inline-flex font-medium items-center justify-center whitespace-nowrap rounded-full uppercase font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none",
+  "inline-flex font-medium items-center justify-center whitespace-nowrap rounded-sm uppercase text-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        base1: "tracking-widest bg-hotel-light-beige text-hotel-darkest-green hover:bg-hotel-dark-green hover:text-hotel-off-white gap-4",
-        base2: "tracking-widest bg-hotel-dark-green text-hotel-off-white hover:bg-hotel-darker-green hover:text-hotel-off-white gap-4",
-        small: "bg-transparent text-hotel-off-white border border-hotel-off-white hover:bg-hotel-dark-green hover:border-hotel-dark-green hover:text-hotel-off-white",
-        largeIcon: "bg-transparent text-hotel-off-white border border-hotel-off-white hover:bg-hotel-dark-green hover:border-hotel-dark-green hover:text-hotel-off-white flex items-center gap-2",
-        smallIcon: "bg-transparent text-hotel-off-white border border-hotel-off-white hover:bg-hotel-dark-green hover:border-hotel-dark-green hover:text-hotel-off-white flex items-center gap-1",
-        menu: "bg-transparent hover:bg-hotel-dark-green hover:text-hotel-off-white",
+        base1: "tracking-widest bg-hotel-light-beige text-hotel-darkest-blue hover:bg-hotel-dark-blue hover:text-hotel-off-white gap-4",
+        base2: "tracking-widest bg-hotel-dark-blue text-hotel-off-white hover:bg-hotel-darker-blue hover:text-hotel-off-white gap-4",
+        small: "bg-transparent text-hotel-off-white border border-hotel-off-white hover:bg-hotel-dark-blue hover:border-hotel-dark-blue hover:text-hotel-off-white",
+        largeIcon: "bg-transparent text-hotel-off-white border border-hotel-off-white hover:bg-hotel-dark-blue hover:border-hotel-dark-blue hover:text-hotel-off-white flex items-center gap-2",
+        smallIcon: "bg-transparent text-hotel-off-white border border-hotel-off-white hover:bg-hotel-dark-blue hover:border-hotel-dark-blue hover:text-hotel-off-white flex items-center gap-1",
+        menu: "bg-transparent hover:bg-hotel-dark-blue hover:text-hotel-off-white",
       },
       size: {
-        default: "h-[60px] md:h-[76px] px-6 md:px-9 py-3",
-        sm: "h-9 px-3.5",
-        lg: "h-11 px-8",
+        default: "h-[61px] px-6 lg:px-7 py-3",
+        sm: "h-12 px-3.5",
+        lg: "h-[70px] lg:px-10",
         icon: "h-9 w-9",
       },
     },

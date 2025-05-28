@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			maxWidth: {
-        'content': '1400px',
+        'content': '1280px',
         'site': '1600px',
       },
 			colors: {
@@ -70,9 +70,9 @@ export default {
 				// Custom colors for the hotel site
 				hotel: {
 					'light-beige': '#F5EAE5',
-					'dark-green': '#023D30',
-					'darker-green': '#054B3C',
-					'darkest-green': '#021A13',
+					'dark-blue': '#01396C',
+					'darker-blue': '#012E54',
+					'darkest-blue': '#011F3F',
 					'off-white': '#F3EEE7',
 					'cream': '#FAF6F1',
 				}
@@ -136,11 +136,7 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-out': 'fade-out 0.5s ease-out',
 				'slide-in': 'slide-in 0.5s ease-out',
-			},
-			fontFamily: {
-				'playfair': ['Playfair Display', 'serif'],
-				'poppins': ['Poppins', 'sans-serif'],
-			},
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
