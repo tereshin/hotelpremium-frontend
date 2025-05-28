@@ -25,7 +25,7 @@ const RoomService = () => {
           {/* Left image column */}
           <div className={cn("w-full lg:w-[70%] lg:absolute top-0 bottom-0 z-0 right-0")}>
             <div className="w-full bg-cover bg-center rounded-sm" style={{ backgroundImage: `url(/assets/images/services/service-3.jpg)` }}>
-              <div className="pt-[70%]"></div>
+              <div className="pt-[60%] lg:pt-[70%]"></div>
             </div>
           </div>
 

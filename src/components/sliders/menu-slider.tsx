@@ -83,7 +83,7 @@ const MenuSlider = () => {
           <div className="absolute inset-0 bg-[#EEF2F4]"></div>
           <div className="absolute inset-0">
             <img 
-              src="/assets/images/menu/menu-background.png" 
+              src="/assets/images/menu/menu-background.jpg" 
               alt="Menu background" 
               className="w-full h-full object-cover blur-sm opacity-60"
             />
