@@ -20,6 +20,9 @@ const ServicesSlider = () => {
   const [visibleSlides, setVisibleSlides] = useState(3);
   const [slideWidth, setSlideWidth] = useState(0);
 
+  // Создаем отфильтрованный список сервисов
+  const filteredServices = services.filter((service: ServiceData) => service.link !== location.pathname);
+
   const sliderRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -85,19 +88,19 @@ const ServicesSlider = () => {
 
   const handlePrev = () => {
     setCurrentSlide((prev) =>
-      prev === 0 ? services.length - visibleSlides : prev - 1
+      prev === 0 ? Math.max(0, filteredServices.length - visibleSlides) : prev - 1
     );
   };
 
   const handleNext = () => {
     setCurrentSlide((prev) =>
-      prev === services.length - visibleSlides ? 0 : prev + 1
+      prev >= filteredServices.length - visibleSlides ? 0 : prev + 1
     );
   };
 
   const translateX = -(currentSlide * (slideWidth + currentGap));
 
-  if (services.length === 0) {
+  if (filteredServices.length === 0) {
     return null;
   }
 
@@ -114,8 +117,7 @@ const ServicesSlider = () => {
         className="flex touch-pan-y gap-[10px] lg:gap-[30px] transition-all duration-500 ease-in-out mb-4 lg:mb-10"
         style={{ transform: `translateX(${translateX}px)` }}
       >
-        {services
-          .filter((service: ServiceData) => service.link !== location.pathname)
+        {filteredServices
           .map((service: ServiceData) => {
             return (
               <div
@@ -150,7 +152,7 @@ const ServicesSlider = () => {
       </div>
       <div className="relative flex justify-between items-center gap-8 lg:ml-auto lg:justify-end">
         {/* Counter */}
-        <SliderCounter current={currentSlide + 1} total={services.length} />
+        <SliderCounter current={currentSlide + 1} total={filteredServices.length} />
         {/* Navigation */}
         <SliderNavigation onPrev={handlePrev} onNext={handleNext} className="text-[#01396C]" />
       </div>
