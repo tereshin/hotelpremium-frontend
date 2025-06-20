@@ -15,7 +15,6 @@ const Index = () => {
   return (
     <div className="overflow-x-hidden">
       <div className="min-h-screen bg-white  mx-auto">
-        <Header />
 
         {/* Hero Section */}
         <section className="relative">
@@ -87,7 +86,7 @@ const Index = () => {
           </div>
         </section>
         
-        <Footer />
+        
       </div>
     </div>
   );

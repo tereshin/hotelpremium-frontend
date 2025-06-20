@@ -9,10 +9,7 @@ src/
 │   └── layout/         # Layout компоненты (Header, Footer)
 ├── features/           # Функциональность приложения, разделенная по фичам
 │   ├── booking/        # Бронирование
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   └── types/
+│   │   └── components/
 │   ├── hotel/          # Информация об отеле
 │   ├── services/       # Услуги отеля
 │   ├── promotions/     # Акции и предложения
@@ -23,8 +20,7 @@ src/
 │   ├── constants/     # Константы и данные
 │   └── types/         # TypeScript типы
 ├── pages/             # Страницы/роуты
-├── store/             # Глобальное состояние приложения
-├── api/               # API слой
+├── store/             # Глобальное состояние приложения (Redux Toolkit)
 └── styles/            # Стили
 ```
 
@@ -33,26 +29,16 @@ src/
 ### Разделение ответственности
 - **Компоненты** отвечают только за UI
 - **Хуки** содержат бизнес-логику
-- **Сервисы** работают с API
 - **Утилиты** содержат чистые функции
 
 ### Feature-based структура
 Каждая фича содержит все необходимые ей файлы:
 - `components/` - компоненты фичи
-- `hooks/` - хуки фичи
-- `services/` - сервисы для работы с API
-- `types/` - типы, специфичные для фичи
 
 ### Управление состоянием
-- **Zustand** для глобального состояния
+- **Redux Toolkit** для глобального состояния
+- **Zustand** для простых состояний (например, `useGeneralStore` для `isLoading`)
 - **useState** для локального состояния компонентов
-- Правило: используйте глобальное состояние `useGeneralStore` для `isLoading`
-
-### API слой
-Централизованная работа с API:
-- Базовый `axios` instance в `api/index.ts`
-- Отдельные файлы для каждой группы API методов
-- Обработка ошибок на уровне interceptors
 
 ### TypeScript
 - Строгая типизация всех компонентов и функций
@@ -87,14 +73,6 @@ const [isLoading, setIsLoading] = useState(false);
 import { useLoading } from "@/shared/hooks/use-loading";
 
 const { isLoading, setLoading } = useLoading();
-```
-
-### Работа с API
-```tsx
-import { hotelAPI } from "@/api/hotel";
-
-// Использование
-const bookingData = await hotelAPI.createBooking(data);
 ```
 
 ## Преимущества новой архитектуры

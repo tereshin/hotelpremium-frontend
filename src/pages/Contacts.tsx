@@ -16,7 +16,7 @@ const Contacts = () => {
             <ImageGallerySlider />
           </div>
         </section>
-      <Footer />
+      
     </div>
   );
 };

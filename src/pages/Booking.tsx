@@ -17,7 +17,7 @@ const Booking = () => {
           <ImageGallerySlider />
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 };

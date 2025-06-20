@@ -24,7 +24,7 @@ const Promotions = () => {
           <ImageGallerySlider />
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 };

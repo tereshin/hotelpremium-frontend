@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TitleProps {
-  children: React.ReactNode;
+  children: string;
   className?: string;
   size?: 'large' | 'medium' | 'small';
 }
@@ -15,7 +15,10 @@ const titleSizes = {
 
 const Title: React.FC<TitleProps> = ({ children, className = '', size = 'large' }) => {
   return (
-    <h2 className={`uppercase ${className} ${titleSizes[size]}`}>{children}</h2>
+    <h2 
+      className={`uppercase ${className} ${titleSizes[size]}`}
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
   );
 };
 

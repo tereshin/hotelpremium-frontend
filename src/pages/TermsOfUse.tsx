@@ -27,7 +27,7 @@ const TermsOfUse = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 };
