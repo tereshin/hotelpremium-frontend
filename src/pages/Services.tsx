@@ -19,7 +19,7 @@ const Services = () => {
           <ImageGallerySlider />
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 };

@@ -20,7 +20,6 @@ const FirstSection: React.FC<FirstSectionProps> = ({ title = 'Заголовок
 
   return (
     <div><div className={cn("relative overflow-hidden h-[70px] lg:h-[370px] w-full", className)}>
-      <Header />
       <div
         className={cn(
           "absolute inset-0 transition-all duration-700 ease-in-out",

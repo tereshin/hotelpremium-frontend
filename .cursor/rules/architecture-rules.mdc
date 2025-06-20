@@ -1,0 +1,362 @@
+---
+description: Architecture rules
+globs: 
+alwaysApply: false
+---
+# Rules for Creating Files
+
+## General Project Architecture
+
+The project is built with **React** using:
+- **TypeScript**
+- **Radix-UI**
+- **Tailwind CSS** for styling
+- **Redux Toolkit** for state management
+- **Axios** for API requests
+- **i18next** for internationalization
+
+## File Structure and Naming Rules
+
+### 1. Components (`/src/components/`)
+
+#### Base Components (`/src/components/base/`)
+- **Purpose**: Reusable components
+- **Naming**: `Base{ComponentName}.tsx`
+- **Examples**: `BaseIcon.tsx`, `BaseBreadcrumb.tsx`
+- **Folder Structure**: Group by functionality (e.g., `data-table/`)
+
+#### Feature-specific Components (`/src/components/{feature}/`)
+- **Purpose**: Components for specific features
+- **Naming**: `{FeatureName}{ComponentType}.tsx`
+- **Examples**: `AdministratorsTable.tsx`, `ResidentsReviewEditForm.tsx`
+- **Folder Structure**: 
+  - Main components in the root folder
+  - Sub-components in the `single/` folder for detail pages
+
+#### Component Structure:
+```tsx
+import React from 'react';
+// Imports
+// Types for props
+// Hook imports
+
+interface Props {
+  // Props definition
+}
+
+export const ComponentName: React.FC<Props> = ({ prop1, prop2 }) => {
+  // State hooks
+  // Effect hooks
+  // Custom hooks
+  // Computed values
+  // Event handlers
+  
+  return (
+    <div>
+      {/* Component content */}
+    </div>
+  );
+};
+
+export default ComponentName;
+```
+
+### 2. Pages (`/src/pages/`)
+
+#### Folder Structure:
+- **List**: `/{feature}/index.tsx`
+- **Detail page**: `/{feature}/[id].tsx` or `/{feature}/Detail.tsx`
+- **Create**: `/{feature}/new.tsx` or `/{feature}/Create.tsx`
+
+#### Page Structure:
+```tsx
+import React from 'react';
+import { FeatureNamePage } from '../components/feature';
+
+const FeatureNameIndex: React.FC = () => {
+  return <FeatureNamePage />;
+};
+
+export default FeatureNameIndex;
+```
+
+### 3. Store (`/src/store/`)
+
+#### Naming: `{feature}Slice.ts`
+#### Structure:
+```typescript
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import type { RootState } from './index';
+import type { MetaResponse } from '../types/general';
+import type { FeatureResource, FeatureResponse } from '../types/feature';
+import { featureApi } from '../api/feature';
+
+// Async thunks
+export const getFeatures = createAsyncThunk(
+  'feature/getFeatures',
+  async (payload?: any) => {
+    // Implementation
+    return await featureApi.getAll(payload);
+  }
+);
+
+export const getSingleFeature = createAsyncThunk(
+  'feature/getSingleFeature',
+  async (id: string) => {
+    // Implementation
+    return await featureApi.getById(id);
+  }
+);
+
+// More thunks for CRUD operations
+
+interface FeatureState {
+  items: FeatureResource[];
+  meta: MetaResponse;
+  loading: boolean;
+  error: string | null;
+}
+
+const initialState: FeatureState = {
+  items: [],
+  meta: { /* initial meta */ },
+  loading: false,
+  error: null,
+};
+
+export const featureSlice = createSlice({
+  name: 'feature',
+  initialState,
+  reducers: {
+    // Additional reducers if needed
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getFeatures.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getFeatures.fulfilled, (state, action) => {
+        state.items = action.payload.data.collection;
+        state.meta = action.payload.data.meta;
+        state.loading = false;
+      })
+      .addCase(getFeatures.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || 'Failed to fetch';
+      })
+      // Other cases for different thunks
+  },
+});
+
+// Selectors
+export const selectFeatures = (state: RootState) => state.feature.items;
+export const selectFeaturesMeta = (state: RootState) => state.feature.meta;
+export const selectFeaturesLoading = (state: RootState) => state.feature.loading;
+
+export default featureSlice.reducer;
+```
+
+### 4. Types (`/src/types/`)
+
+#### Naming: `{feature}.ts`
+#### Structure:
+```typescript
+import type { ProfileResource } from './auth';
+import type { MetaResponse } from './general';
+
+export interface FeatureResource extends ProfileResource {
+  id: string;
+  // Additional fields
+}
+
+export interface FeatureResponse {
+  data: {
+    collection: FeatureResource[];
+    meta: MetaResponse;
+  };
+}
+
+export interface FeatureRequest {
+  // Request fields
+}
+
+export interface ErrorDetailsFeature {
+  // Error fields
+}
+```
+
+### 5. Hooks (`/src/hooks/`)
+
+#### API Hooks (`/src/hooks/api/`)
+- **Purpose**: API functions
+- **Naming**: `use{Feature}Api.ts`
+
+#### Utils Hooks (`/src/hooks/utils/`)
+- **Purpose**: Utility functions
+- **Folder Structure**: Group by type (`get/`, `is/`)
+
+#### Routes Hooks (`/src/hooks/routes/`)
+- **Purpose**: Functions for working with routes
+
+### 6. Layouts (`/src/layouts/`)
+
+#### Main layout: `DefaultLayout.tsx`
+
+## Coding Rules
+
+### 1. TypeScript
+- Use strict typing
+- Define interfaces for all data
+- Use `type` for union types, `interface` for objects
+
+### 2. React Components
+- Use functional components with hooks
+- Name components in PascalCase
+- Use kebab-case for data attributes in JSX
+
+### 3. API
+- Use custom hooks for API requests
+- Handle errors through try-catch
+- Use typed responses
+
+### 4. Styling
+- Use Tailwind CSS classes
+- Avoid inline styles
+- Use Material-UI components with prefix `Ui`
+
+### 5. State Management
+- Use Redux Toolkit for global state
+- Use `useState` and `useReducer` for local state
+- Group related data in one slice
+
+## Example of Creating a New Feature
+
+### 1. Create types (`/src/types/users.ts`)
+### 2. Create API service (`/src/api/users.ts`)
+### 3. Create slice (`/src/store/usersSlice.ts`)
+### 4. Create components (`/src/components/users/`)
+### 5. Create pages (`/src/pages/users/`)
+### 6. Add routes to navigation
+
+## Naming Conventions
+
+- **Files**: kebab-case (`user-profile.tsx`)
+- **Components**: PascalCase (`UserProfile.tsx`)
+- **Variables**: camelCase (`userName`)
+- **Constants**: UPPER_SNAKE_CASE (`API_BASE_URL`)
+- **Types/Interfaces**: PascalCase (`UserResource`)
+- **Functions**: camelCase (`getUserById`)
+- **Hooks**: camelCase starting with 'use' (`useUserData`)
+- **Redux Slices**: camelCase (`usersSlice`)
+
+## Page Component Structure
+
+```tsx
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { TheHeader } from '../components/layout';
+import { FeatureHeaderArea, FeatureTable } from '../components/feature';
+
+const FeaturePage: React.FC = () => {
+  const [searchValue, setSearchValue] = useState('');
+  const items = [{ label: "FeatureName" }];
+  const dispatch = useDispatch();
+  
+  const handleSearch = (value: string) => {
+    setSearchValue(value);
+  };
+  
+  return (
+    <div>
+      {/* Header */}
+      <TheHeader 
+        title="FeatureName"
+        items={items} 
+        headerActions={
+          <FeatureHeaderArea 
+            value={searchValue}
+            onSearch={handleSearch}
+          />
+        }
+      />
+
+      {/* Main Content */}
+      <div className="flex flex-col gap-4">
+        <div className="card">
+          <FeatureTable searchValue={searchValue} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FeaturePage;
+```
+
+## API Structure (`/src/api/`)
+
+#### Naming: `{feature}Api.ts`
+#### Structure:
+```typescript
+import { axiosInstance } from './axios-instance';
+import type { FeatureResponse, FeatureRequest } from '../types/feature';
+
+const BASE_URL = '/api/features';
+
+export const featureApi = {
+  getAll: async (params?: any): Promise<FeatureResponse> => {
+    const response = await axiosInstance.get(BASE_URL, { params });
+    return response.data;
+  },
+  
+  getById: async (id: string): Promise<FeatureResponse> => {
+    const response = await axiosInstance.get(`${BASE_URL}/${id}`);
+    return response.data;
+  },
+  
+  create: async (data: FeatureRequest): Promise<FeatureResponse> => {
+    const response = await axiosInstance.post(BASE_URL, data);
+    return response.data;
+  },
+  
+  update: async (id: string, data: FeatureRequest): Promise<FeatureResponse> => {
+    const response = await axiosInstance.put(`${BASE_URL}/${id}`, data);
+    return response.data;
+  },
+  
+  delete: async (id: string): Promise<void> => {
+    await axiosInstance.delete(`${BASE_URL}/${id}`);
+  }
+};
+```
+
+## Router Configuration (`/src/router/`)
+
+```tsx
+import { createBrowserRouter } from 'react-router-dom';
+import DefaultLayout from '../layouts/DefaultLayout';
+import FeatureIndex from '../pages/feature/index';
+import FeatureDetail from '../pages/feature/Detail';
+import FeatureCreate from '../pages/feature/Create';
+
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <DefaultLayout />,
+    children: [
+      {
+        path: 'features',
+        element: <FeatureIndex />
+      },
+      {
+        path: 'features/:id',
+        element: <FeatureDetail />
+      },
+      {
+        path: 'features/new',
+        element: <FeatureCreate />
+      }
+    ]
+  }
+]);
+```

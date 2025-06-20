@@ -7,7 +7,7 @@ const FAQ = () => {
     <div className="min-h-screen bg-white overflow-x-hidden max-w-[2048px] mx-auto">
       <FirstSection title="Вопросы и ответы" />
       <FAQSection />
-      <Footer />
+      
     </div>
   );
 };
