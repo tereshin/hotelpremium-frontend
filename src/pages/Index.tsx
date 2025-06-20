@@ -57,7 +57,7 @@ const Index = () => {
         {/* Services Section */}
         <section className="py-5 lg:py-10 px-4 lg:px-10 max-w-[2048px] mx-auto">
           <div className="max-w-content w-full mx-auto flex flex-col gap-5 lg:gap-12">
-            <Title>Мы позаботимся<br />о всем</Title>
+            <Title>{"Мы позаботимся<br/>о всем"}</Title>
             <ServicesSlider />
           </div>
         </section>

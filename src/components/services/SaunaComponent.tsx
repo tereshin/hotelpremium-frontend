@@ -64,8 +64,7 @@ const SaunaComponent = () => {
       {/* Features Section */}
       <section className="py-10 lg:py-20 px-4 lg:px-10 max-w-[2048px] mx-auto">
         <div className="max-w-content w-full mx-auto flex flex-col gap-6 lg:gap-12">
-          <Title>Мы все продумали, комплекс<br/>
-          оборудован всем необходимым: </Title>
+          <Title>{"Мы все продумали, комплекс<br/>оборудован всем необходимым: "}</Title>
           
           <div className="flex flex-wrap justify-between gap-6 lg:gap-8">
             {saunaFeatures.map((feature, index) => (

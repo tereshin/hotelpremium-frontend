@@ -21,7 +21,7 @@ const AttractionsSection = () => {
         <div className="w-full md:w-1/2 bg-[#FAF6F1] py-10 md:py-12 px-5 md:px-10 lg:px-[100px] flex flex-col justify-center">
           <div className="flex flex-col gap-10">
             <Title>
-              13 достопри-<br />мечательностей Электростали
+              {"13 достопри-<br />мечательностей Электростали"}
             </Title>
             
             <p className="text-[15px] leading-[1.73em] text-[#021A13] opacity-70">
