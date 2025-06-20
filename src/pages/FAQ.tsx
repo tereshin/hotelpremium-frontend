@@ -1,6 +1,6 @@
-import Footer from "@/components/footer";
-import FirstSection from "@/components/sections/first-section";
-import FAQSection from "@/components/sections/faq-section";
+import Footer from "@/components/layout/footer";
+import FirstSection from "@/features/hotel/components/first-section";
+import FAQSection from "@/shared/utils/faq-section";
 
 const FAQ = () => {
   return (

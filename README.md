@@ -1,7 +1,6 @@
-![Обложка](https://dev1.tereshin.co/images/cover.jpg)
+![Обложка](https://hotelpremium.ru/images/cover.jpg)
 # Гостинничный комплекс «Premium»
 
-Для разработки этого сайта я использовал Cursor и MCP сервер для переноса компонентов из Figma.
 
 ## Запуск dev
 

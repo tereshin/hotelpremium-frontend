@@ -1,11 +1,11 @@
-import Footer from "@/components/footer";
-import TimeIcon from "@/components/icons/TimeIcon";
-import FirstSection from "@/components/sections/first-section";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
-import MenuSlider from "@/components/sliders/menu-slider";
-import ServicesSlider from "@/components/sliders/services-slider";
+import Footer from "@/components/layout/footer";
+import TimeIcon from "@/components/ui/icons/TimeIcon";
+import FirstSection from "@/features/hotel/components/first-section";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
+import MenuSlider from "@/components/ui/sliders/menu-slider";
+import ServicesSlider from "@/components/ui/sliders/services-slider";
 import Title from "@/components/ui/Title";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/utils";
 
 const RoomService = () => {
   return (

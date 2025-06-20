@@ -1,9 +1,9 @@
-import Footer from "@/components/footer";
-import FirstSection from "@/components/sections/first-section";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
+import Footer from "@/components/layout/footer";
+import FirstSection from "@/features/hotel/components/first-section";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
 import Title from "@/components/ui/Title";
-import { cn } from "@/lib/utils";
-import ServicesSlider from "@/components/sliders/services-slider";
+import { cn } from "@/shared/utils/utils";
+import ServicesSlider from "@/components/ui/sliders/services-slider";
 const Laundry = () => {
     return (
         <div className="min-h-screen bg-white overflow-x-hidden max-w-[2048px] mx-auto">

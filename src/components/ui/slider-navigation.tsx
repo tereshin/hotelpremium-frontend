@@ -1,6 +1,6 @@
 import React from 'react';
-import ArrowIcon from '../icons/ArrowIcon';
-import { cn } from '@/lib/utils';
+import ArrowIcon from "@/components/ui/icons/ArrowIcon";
+import { cn } from '@/shared/utils/utils';
 
 interface SliderNavigationProps {
   onPrev: () => void;

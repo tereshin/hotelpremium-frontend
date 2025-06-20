@@ -1,12 +1,12 @@
-import Footer from "@/components/footer";
-import FirstSection from "@/components/sections/first-section";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
+import Footer from "@/components/layout/footer";
+import FirstSection from "@/features/hotel/components/first-section";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
 import Title from "@/components/ui/Title";
-import ServicesSlider from "@/components/sliders/services-slider";
+import ServicesSlider from "@/components/ui/sliders/services-slider";
 import FeatureIcon from "@/components/ui/FeatureIcon";
-import { cn } from "@/lib/utils";
-import CheckIcon from "@/components/icons/CheckIcon";
-import { Form } from "@/components/Form";
+import { cn } from "@/shared/utils/utils";
+import CheckIcon from "@/components/ui/icons/CheckIcon";
+import { Form } from "@/components/layout/Form";
 const Barbecue = () => {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden max-w-[2048px] mx-auto">

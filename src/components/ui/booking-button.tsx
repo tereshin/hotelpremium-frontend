@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { CustomButton } from "./custom-button";
 import { BookingFormRef } from "../booking-form";
 import { BookingForm } from "../booking-form";
-import ArrowIcon from "../icons/ArrowIcon";
+import ArrowIcon from "@/components/ui/icons/ArrowIcon";
 
 interface BookingButtonProps {
     variant?: 'base1' | 'base2';

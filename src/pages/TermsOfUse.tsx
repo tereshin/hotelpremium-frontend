@@ -1,5 +1,5 @@
-import Footer from "@/components/footer";
-import FirstSection from "@/components/sections/first-section";
+import Footer from "@/components/layout/footer";
+import FirstSection from "@/features/hotel/components/first-section";
 
 const TermsOfUse = () => {
   return (

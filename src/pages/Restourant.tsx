@@ -1,14 +1,14 @@
-import Footer from "@/components/footer";
-import { Form } from "@/components/Form";
-import FirstSection from "@/components/sections/first-section";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
-import ImageSlider from "@/components/sliders/image-slider";
-import promotions from '@/lib/promotions';
+import Footer from "@/components/layout/footer";
+import { Form } from "@/components/layout/Form";
+import FirstSection from "@/features/hotel/components/first-section";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
+import ImageSlider from "@/components/ui/sliders/image-slider";
+import promotions from '@/shared/constants/promotions';
 import Title from "@/components/ui/Title";
-import TimeIcon from "@/components/icons/TimeIcon";
-import { cn } from "@/lib/utils";
-import MenuSlider from "@/components/sliders/menu-slider";
-import TextImageSection from "@/components/sections/text-image-section";
+import TimeIcon from "@/components/ui/icons/TimeIcon";
+import { cn } from "@/shared/utils/utils";
+import MenuSlider from "@/components/ui/sliders/menu-slider";
+import TextImageSection from "@/shared/utils/text-image-section";
 const images = [
   "/assets/images/restaurant/1.jpg",
   "/assets/images/restaurant/2.jpg",

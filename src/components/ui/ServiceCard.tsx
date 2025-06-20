@@ -1,6 +1,6 @@
 import React from 'react';
 import { CustomButton } from './custom-button';
-import ArrowIcon from '../icons/ArrowIcon';
+import ArrowIcon from "@/components/ui/icons/ArrowIcon";
 import Title from './Title';
 import { useNavigate } from 'react-router-dom';
 interface ServiceProps {

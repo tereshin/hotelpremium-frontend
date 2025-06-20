@@ -1,9 +1,11 @@
-import Footer from "@/components/footer";
-import FirstSection from "@/components/sections/first-section";
-import PromotionsList from "@/components/sections/promotions-list";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
+import Footer from "@/components/layout/footer";
+import FirstSection from "@/features/hotel/components/first-section";
+import PromotionsList from "@/features/promotions/components/promotions-list";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
 import Title from "@/components/ui/Title";
-import { BookingSection } from '@/components/sections/booking';
+import { BookingSection } from '@/features/booking/components/booking';
+import TestimonialSlider from '@/components/ui/sliders/testimonial-slider';
+
 const Promotions = () => {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden max-w-[2048px] mx-auto">

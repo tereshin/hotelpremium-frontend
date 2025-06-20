@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CustomButton } from './custom-button';
-import ArrowIcon from '../icons/ArrowIcon';
+import ArrowIcon from "@/components/ui/icons/ArrowIcon";
 import Title from './Title';
 import BookingDialog from '../booking-dialog';
 import { BookingButton } from './booking-button';
