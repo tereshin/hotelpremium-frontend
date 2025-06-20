@@ -73,7 +73,7 @@ const FeaturesSection = () => {
   return (
     <section className="bg-white py-10 md:py-12 lg:py-[50px] lg:pb-[70px] px-5 md:px-10">
       <div className="flex flex-col gap-8 md:gap-[40px] lg:gap-[60px] max-w-content mx-auto">
-        <Title>Также вы всегда можете<br className="hidden md:block" /> рассчитывать на:</Title>
+        <Title>{"Также вы всегда можете<br className=\"hidden md:block\" /> рассчитывать на:"}</Title>
         
         <div className="flex flex-col gap-5 lg:gap-10md:gap-[40px] flex-wrap">
           <div className="w-full flex flex-col md:flex-row gap-10">
