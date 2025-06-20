@@ -1,14 +1,14 @@
-import Header from '@/components/header';
-import PromotionsSlider from '@/components/sliders/promotions-slider';
-import Footer from '@/components/footer';
+import Header from '@/components/layout/header';
+import PromotionsSlider from '@/components/ui/sliders/promotions-slider';
+import Footer from '@/components/layout/footer';
 import Title from '@/components/ui/Title';
-import TextImageSection from '@/components/sections/text-image-section';
-import promotions from '@/lib/promotions';
-import HeroImage from '@/components/sliders/hero-image';
+import TextImageSection from '@/shared/utils/text-image-section';
+import promotions from '@/shared/constants/promotions';
+import HeroImage from '@/components/ui/sliders/hero-image';
 import FeatureIcon from '@/components/ui/FeatureIcon';
-import ServicesSlider from '@/components/sliders/services-slider';
-import { BookingSection } from '@/components/sections/booking';
-import ImageGallerySlider from '@/components/sliders/image-gallery-slider';
+import ServicesSlider from '@/components/ui/sliders/services-slider';
+import { BookingSection } from '@/features/booking/components/booking';
+import ImageGallerySlider from '@/components/ui/sliders/image-gallery-slider';
 
 const Index = () => {
 

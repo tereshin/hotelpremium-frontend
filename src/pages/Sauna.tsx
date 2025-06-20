@@ -1,13 +1,13 @@
-import Footer from "@/components/footer";
-import { Form } from "@/components/Form";
-import FirstSection from "@/components/sections/first-section";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
+import Footer from "@/components/layout/footer";
+import { Form } from "@/components/layout/Form";
+import FirstSection from "@/features/hotel/components/first-section";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
 import Title from "@/components/ui/Title";
-import { cn } from "@/lib/utils";
-import CheckIcon from "@/components/icons/CheckIcon";
-import ServicesSlider from "@/components/sliders/services-slider";
+import { cn } from "@/shared/utils/utils";
+import CheckIcon from "@/components/ui/icons/CheckIcon";
+import ServicesSlider from "@/components/ui/sliders/services-slider";
 import React from "react";
-import ImageSlider from "@/components/sliders/image-slider";
+import ImageSlider from "@/components/ui/sliders/image-slider";
 
 // Sample sauna images - replace with actual images from your project
 const saunaImages = [

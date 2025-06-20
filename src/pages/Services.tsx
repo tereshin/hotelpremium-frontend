@@ -1,8 +1,8 @@
-import Footer from "@/components/footer";
-import { BookingSection } from "@/components/sections/booking";
-import FirstSection from "@/components/sections/first-section";
-import ServicesList from "@/components/sections/services-list";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
+import Footer from "@/components/layout/footer";
+import { BookingSection } from "@/features/booking/components/booking";
+import FirstSection from "@/features/hotel/components/first-section";
+import ServicesList from "@/features/services/components/services-list";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
 import Title from "@/components/ui/Title";
 
 

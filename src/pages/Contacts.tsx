@@ -1,7 +1,7 @@
-import Footer from "@/components/footer";
-import FirstSection from "@/components/sections/first-section";
-import ContactMap from "@/components/sections/contact-map";
-import ImageGallerySlider from "@/components/sliders/image-gallery-slider";
+import Footer from "@/components/layout/footer";
+import FirstSection from "@/features/hotel/components/first-section";
+import ContactMap from "@/features/hotel/components/contact-map";
+import ImageGallerySlider from "@/components/ui/sliders/image-gallery-slider";
 import Title from "@/components/ui/Title";
 
 const Contacts = () => {
