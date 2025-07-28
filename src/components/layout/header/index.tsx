@@ -25,6 +25,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleMobileMenuClose = () => {
+    setMobileMenuOpen(false);
+  };
+
   const menuItemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -149,7 +153,14 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" target="_blank" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Номера</Link>
+                <Link 
+                  to="https://reservationsteps.ru/rooms/index/e222bc26-37b1-4d47-a7b0-507f2654b884?lang=ru" 
+                  target="_blank" 
+                  className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase"
+                  onClick={handleMobileMenuClose}
+                >
+                  Номера
+                </Link>
               </motion.div>
               <motion.div
                 custom={3}
@@ -157,7 +168,13 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="/barbecue" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Аренда беседок</Link>
+                <Link 
+                  to="/barbecue" 
+                  className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase"
+                  onClick={handleMobileMenuClose}
+                >
+                  Аренда беседок
+                </Link>
               </motion.div>
               
               <motion.div
@@ -166,7 +183,13 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="/promotions" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Акции</Link>
+                <Link 
+                  to="/promotions" 
+                  className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase"
+                  onClick={handleMobileMenuClose}
+                >
+                  Акции
+                </Link>
               </motion.div>
               <motion.div
                 custom={6}
@@ -174,7 +197,13 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="/services" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Услуги</Link>
+                <Link 
+                  to="/services" 
+                  className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase"
+                  onClick={handleMobileMenuClose}
+                >
+                  Услуги
+                </Link>
               </motion.div>
               <motion.div
                 custom={7}
@@ -182,7 +211,13 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="/restaurant" className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase">Ресторан и караоке</Link>
+                <Link 
+                  to="/restaurant" 
+                  className="text-2xl tracking-wider py-2 border-opacity-20 block uppercase"
+                  onClick={handleMobileMenuClose}
+                >
+                  Ресторан и караоке
+                </Link>
               </motion.div>
               <motion.div
                 custom={8}
@@ -190,7 +225,13 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="/contacts" className="text-2xl tracking-wider py-2 border-opacity-20 block mb-5 uppercase">Контакты</Link>
+                <Link 
+                  to="/contacts" 
+                  className="text-2xl tracking-wider py-2 border-opacity-20 block mb-5 uppercase"
+                  onClick={handleMobileMenuClose}
+                >
+                  Контакты
+                </Link>
               </motion.div>
               <motion.div
                 custom={9}
@@ -198,7 +239,13 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="tel:+79299961669" className="text-base border-opacity-20 block mt-6">+7 (929) 996-16-69</Link>
+                <Link 
+                  to="tel:+79299961669" 
+                  className="text-base border-opacity-20 block mt-6"
+                  onClick={handleMobileMenuClose}
+                >
+                  +7 (929) 996-16-69
+                </Link>
               </motion.div>
               <motion.div
                 custom={10}
@@ -206,7 +253,13 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="mailto:hotelpremium2016@yandex.ru" className="text-base border-opacity-20 block my-1">hotelpremium2016@yandex.ru</Link>
+                <Link 
+                  to="mailto:hotelpremium2016@yandex.ru" 
+                  className="text-base border-opacity-20 block my-1"
+                  onClick={handleMobileMenuClose}
+                >
+                  hotelpremium2016@yandex.ru
+                </Link>
               </motion.div>
               <motion.div
                 custom={10}
@@ -214,7 +267,14 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <Link to="https://yandex.ru/maps/-/C2WRRgs" target="_blank" className="text-base border-opacity-20 block my-1">МО, г. Щелково, улица Талсинская ул., дом 9/2</Link>
+                <Link 
+                  to="https://yandex.ru/maps/-/C2WRRgs" 
+                  target="_blank" 
+                  className="text-base border-opacity-20 block my-1"
+                  onClick={handleMobileMenuClose}
+                >
+                  МО, г. Щелково, улица Талсинская ул., дом 9/2
+                </Link>
               </motion.div>
             </nav>
           </motion.div>
