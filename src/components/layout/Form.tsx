@@ -123,7 +123,7 @@ export const Form: React.FC<FormProps> = ({ className, color = 'default' }) => {
             className="mr-3"
             required
           />
-          <span>Вы соглашаетесь с <a href="/privacy-policy" className="text-hotel-dark-blue inline border-b" target="_blank">политикой конфиденциальности</a> и даете свое согласие на <a href="/personal" className="text-hotel-dark-blue inline border-b" target="_blank">обработку персональных данных</a>.</span>
+          <span>Вы соглашаетесь с <a href="/privacy-policy" className="text-hotel-dark-blue inline border-b" target="_blank">политикой конфиденциальности</a> и даете свое согласие на <a href="/personal-policy" className="text-hotel-dark-blue inline border-b" target="_blank">обработку персональных данных</a>.</span>
         </label>
       </div>
       {/* Диалог */}
