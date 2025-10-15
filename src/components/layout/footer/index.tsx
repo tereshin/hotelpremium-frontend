@@ -21,7 +21,7 @@ const Footer = () => {
                 <Link to="/privacy-policy" className="text-sm font-normal font-montserrat text-[#798591] hover:text-white transition-colors">
                   Политика конфиденциальности
                 </Link>
-                <Link to="/personal" className="text-sm font-normal font-montserrat text-[#798591] hover:text-white transition-colors">
+                <Link to="/personal-policy" className="text-sm font-normal font-montserrat text-[#798591] hover:text-white transition-colors">
                   Согласие на обработку персональных данных
                 </Link>
                 <Link to="/terms" className="text-sm font-normal font-montserrat text-[#798591] hover:text-white transition-colors">

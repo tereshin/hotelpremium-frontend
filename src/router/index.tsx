@@ -19,6 +19,7 @@ const Breakfast = lazy(() => import('../pages/Breakfast'));
 const Laundry = lazy(() => import('../pages/Laundry'));
 const Personal = lazy(() => import('../pages/Personal'));
 const Sauna = lazy(() => import('../pages/Sauna'));
+const PersonalPolicy = lazy(() => import('../pages/PersonalPolicy.tsx'));
 
 export const router = (
   <Routes>
@@ -29,6 +30,7 @@ export const router = (
       <Route path="contacts" element={<Contacts />} />
       <Route path="faq" element={<FAQ />} />
       <Route path="privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="personal-policy" element={<PersonalPolicy />} />
       <Route path="personal" element={<Personal />} />
       <Route path="terms" element={<TermsOfUse />} />
       <Route path="barbecue" element={<Barbecue />} />
